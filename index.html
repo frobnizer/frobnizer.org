@@ -309,11 +309,16 @@ async function updateBannerPrice() {
             if (tableVolumeUSD) tableVolumeUSD.innerText = formattedVolumeUSD;
 
             const tokenAddress = "0xBe600893926e95DaA7Aa699A373E826Ed4a0721a";
-            const tokenResponse = await fetch(`https://api.geckoterminal.com/api/v2/networks/base/tokens/${tokenAddress}`);
-            const tokenResult = await tokenResponse.json();
+            const tokenResp = await fetch(`https://api.geckoterminal.com/api/v2/networks/base/tokens/${tokenAddress}`);
+            const tokenJson = await tokenResp.json();
             
-            if (tableHolderCountValue && tokenResult.data.attributes.number_of_holders) {
-                tableHolderCountValue.innerText = new Intl.NumberFormat('en-US').format(tokenResult.data.attributes.number_of_holders);
+            if (tableHolderCountValue) {
+                const holders = tokenJson.data.attributes.number_of_holders;
+                if (holders) {
+                    tableHolderCountValue.innerText = new Intl.NumberFormat('en-US').format(holders);
+                } else {
+                    tableHolderCountValue.innerText = "Syncing...";
+                }
             }
 
             updatePoolAge();
