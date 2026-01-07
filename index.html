@@ -112,7 +112,7 @@
                     <tr><td>Pooled Frobnizer:</td><td id="tableSwappableValue">Loading...</td></tr>
                     <tr><td>Pooled Ethereum:</td><td id="tableEthLocked">Loading...</td></tr>
                     <tr><td>Base Asset Growth:</td><td id="tableEthGrowth">Loading...</td></tr>
-                    <tr><td>Holders:</td><td id="tableHolderCountValue">Loading...</td></tr>
+                    <tr><td>Unique Holders:</td><td id="tableHolderCountValue">Loading...</td></tr>
                     <tr><td>Deployment Age:</td><td id="tablePoolAge">Loading...</td></tr>
                 </table>
             </div>
@@ -317,7 +317,7 @@ async function updateBannerPrice() {
                 if (holders) {
                     tableHolderCountValue.innerText = new Intl.NumberFormat('en-US').format(holders);
                 } else {
-                    tableHolderCountValue.innerText = "9";
+                    tableHolderCountValue.innerText = "9 Addresses";
                 }
             }
 
