@@ -108,8 +108,8 @@
                     <tr><td>Market Cap:</td><td id="tableMarketCapValue">Loading...</td></tr>
                     <tr><td>Burned Liquidity:</td><td id="tableLiquidityValue">Loading...</td></tr>
                     <tr><td>Backing Ratio:</td><td id="tableBackingValue">Loading...</td></tr>
-                    <tr><td>Pooled Frobnizer:</td><td id="tableSwappableValue">Loading...</td></tr>
                     <tr><td>Public Float:</td><td id="tablePublicFloat">Loading...</td></tr>
+                    <tr><td>Pooled Frobnizer:</td><td id="tableSwappableValue">Loading...</td></tr>
                     <tr><td>Pooled Ethereum:</td><td id="tableEthLocked">Loading...</td></tr>
                     <tr><td>Base Asset Growth:</td><td id="tableEthGrowth">Loading...</td></tr>
                     <tr><td>Deployment Age:</td><td id="tablePoolAge">Loading...</td></tr>
@@ -361,10 +361,8 @@ async function updateOnChainBalance() {
             const trueSupply = 378000000;
             const currentPooled = parseFloat(fbzrString);
             const floatValue = trueSupply - currentPooled;
-            const floatPercent = ((floatValue / trueSupply) * 100).toFixed(2);
-            const formattedFloat = new Intl.NumberFormat('en-US').format(Math.ceil(floatValue));
-            
-            tablePublicFloat.innerText = `${formattedFloat} (${floatPercent}%)`;
+
+            tablePublicFloat.innerText = new Intl.NumberFormat('en-US').format(Math.ceil(floatValue));
         }
 
         if (lastUpdated) {
