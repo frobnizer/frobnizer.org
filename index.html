@@ -110,8 +110,8 @@
                     <tr><td>Market Cap:</td><td id="tableMarketCapValue">Loading...</td></tr>
                     <tr><td>Burned Liquidity:</td><td id="tableLiquidityValue">Loading...</td></tr>
                     <tr><td>Backing Ratio:</td><td id="tableBackingValue">Loading...</td></tr>
-                    <tr><td>Unique Holders:</td><td id="tableHolderCountValue">Loading...</td></tr>
                     <tr><td>Public Float:</td><td id="tablePublicFloat">Loading...</td></tr>
+                    <tr><td>Community Holdings:</td><td id="tableCommunityHoldings">Loading...</td></tr>
                     <tr><td>Pooled Frobnizer:</td><td id="tableSwappableValue">Loading...</td></tr>
                     <tr><td>Pooled Ethereum:</td><td id="tableEthLocked">Loading...</td></tr>
                     <tr><td>Base Asset Growth:</td><td id="tableEthGrowth">Loading...</td></tr>
@@ -267,7 +267,6 @@ async function updateBannerPrice() {
     const tableLiquidityValue = document.getElementById('tableLiquidityValue');
     const tableMarketCapValue = document.getElementById('tableMarketCapValue');
     const tableVolumeUSD = document.getElementById('tableVolumeUSD');
-    const tableHolderCountValue = document.getElementById('tableHolderCountValue');
     const tableTxCountValue = document.getElementById('tableTxCountValue');
     const tablePriceChangeValue = document.getElementById('tablePriceChangeValue'); 
     const poolAddress = "0x82ba42C4C5874B6B628768Ede56616c073384842";
@@ -283,7 +282,7 @@ async function updateBannerPrice() {
             const rawLiquidity = parseFloat(attr.reserve_in_usd) || 0;
             const truePrice = rawLiquidity / trueSupply; 
             const tokenPrice = parseFloat(attr.base_token_price_usd);
-            const marketCap = tokenPrice * 378000000;
+            const marketCap = tokenPrice * trueSupply;
 
             const formattedFloorValue = formatWithSubscript(truePrice);
             const formattedTradePrice = formatWithSubscript(tokenPrice);
@@ -323,19 +322,6 @@ async function updateBannerPrice() {
             if (tableMarketCapValue) tableMarketCapValue.innerText = formattedMarketCap;
             if (tableVolumeUSD) tableVolumeUSD.innerText = formattedVolumeUSD;
 
-            const tokenAddress = "0xBe600893926e95DaA7Aa699A373E826Ed4a0721a";
-            const tokenResp = await fetch(`https://api.geckoterminal.com/api/v2/networks/base/tokens/${tokenAddress}`);
-            const tokenJson = await tokenResp.json();
-            
-            if (tableHolderCountValue) {
-                const holders = tokenJson.data.attributes.number_of_holders;
-                if (holders) {
-                    tableHolderCountValue.innerText = new Intl.NumberFormat('en-US').format(holders);
-                } else {
-                    tableHolderCountValue.innerText = "10 Addresses";
-                }
-            }
-
             updatePoolAge();
         }
     } catch (error) {
@@ -353,6 +339,7 @@ setInterval(updateBannerPrice, 60000);
 async function updateOnChainBalance() {
     const tableSwappableValue = document.getElementById('tableSwappableValue');
     const tablePublicFloat = document.getElementById('tablePublicFloat');
+    const tableCommunityHoldings = document.getElementById('tableCommunityHoldings');
     const tableEthLocked = document.getElementById('tableEthLocked');
     const lastUpdated = document.getElementById('lastUpdated');
     
@@ -372,7 +359,6 @@ async function updateOnChainBalance() {
 
         if (tableEthLocked) {
             tableEthLocked.innerText = fEth;
-
             const INITIAL_ETH = 0.00281;
             const growthPercent = (((parseFloat(wethString) - INITIAL_ETH) / INITIAL_ETH) * 100).toFixed(2);
             document.getElementById('tableEthGrowth').innerText = "+" + growthPercent + "%";
@@ -381,18 +367,25 @@ async function updateOnChainBalance() {
         const fbzrContract = new ethers.Contract(fbzrAddress, minABI, provider);
         const fbzrBalanceRaw = await fbzrContract.balanceOf(poolAddress);
         const fbzrString = ethers.utils.formatUnits(fbzrBalanceRaw, 18);
-        const fFbzr = new Intl.NumberFormat('en-US').format(Math.floor(parseFloat(fbzrString)));
+        
+        const trueSupply = 378000000;
+        const currentPooled = parseFloat(fbzrString);
+        
+        // Community Holdings is the blockchain source (Total - Pooled)
+        const communityValue = trueSupply - currentPooled;
 
         if (tableSwappableValue) {
-            tableSwappableValue.innerText = fFbzr;
+            tableSwappableValue.innerText = new Intl.NumberFormat('en-US').format(Math.floor(currentPooled));
         }
 
-        if (tablePublicFloat) {
-            const trueSupply = 378000000;
-            const currentPooled = parseFloat(fbzrString);
-            const floatValue = trueSupply - currentPooled;
+        if (tableCommunityHoldings) {
+            tableCommunityHoldings.innerText = new Intl.NumberFormat('en-US').format(Math.ceil(communityValue));
+        }
 
-            tablePublicFloat.innerText = new Intl.NumberFormat('en-US').format(Math.ceil(floatValue));
+        // Public Float is the calculated sum of Pooled + Community
+        if (tablePublicFloat) {
+            const calculatedFloat = currentPooled + communityValue;
+            tablePublicFloat.innerText = new Intl.NumberFormat('en-US').format(calculatedFloat);
         }
 
         if (lastUpdated) {
