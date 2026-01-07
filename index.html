@@ -109,6 +109,7 @@
                     <tr><td>Burned Liquidity:</td><td id="tableLiquidityValue">Loading...</td></tr>
                     <tr><td>Backing Ratio:</td><td id="tableBackingValue">Loading...</td></tr>
                     <tr><td>Pooled Frobnizer:</td><td id="tableSwappableValue">Loading...</td></tr>
+                    <tr><td>Public Float:</td><td id="tablePublicFloat">Loading...</td></tr>
                     <tr><td>Pooled Ethereum:</td><td id="tableEthLocked">Loading...</td></tr>
                     <tr><td>Base Asset Growth:</td><td id="tableEthGrowth">Loading...</td></tr>
                     <tr><td>Deployment Age:</td><td id="tablePoolAge">Loading...</td></tr>
@@ -321,6 +322,7 @@ setInterval(updateBannerPrice, 60000);
 <script>
 async function updateOnChainBalance() {
     const tableSwappableValue = document.getElementById('tableSwappableValue');
+    const tablePublicFloat = document.getElementById('tablePublicFloat');
     const tableEthLocked = document.getElementById('tableEthLocked');
     const lastUpdated = document.getElementById('lastUpdated');
     
@@ -353,6 +355,13 @@ async function updateOnChainBalance() {
 
         if (tableSwappableValue) {
             tableSwappableValue.innerText = fFbzr;
+        }
+
+        if (tablePublicFloat) {
+            const trueSupply = 378000000;
+            const currentPooled = parseFloat(fbzrString);
+            const floatValue = trueSupply - currentPooled;
+            tablePublicFloat.innerText = new Intl.NumberFormat('en-US').format(Math.floor(floatValue));
         }
 
         if (lastUpdated) {
