@@ -306,7 +306,7 @@ async function updateBannerPrice() {
                 const buys = attr.transactions.h24.buys || 0;
                 const sells = attr.transactions.h24.sells || 0;
                 const totalTxs = buys + sells;
-                tableTxCountValue.innerText = totalTxs + " (24h)";
+                tableTxCountValue.innerText = totalTxs;
             }
 
             if (bannerText) bannerText.innerHTML = `Current Market Price: ${formattedTradePrice}`;
