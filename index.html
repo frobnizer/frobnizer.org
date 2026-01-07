@@ -361,7 +361,7 @@ async function updateOnChainBalance() {
             const trueSupply = 378000000;
             const currentPooled = parseFloat(fbzrString);
             const floatValue = trueSupply - currentPooled;
-            tablePublicFloat.innerText = new Intl.NumberFormat('en-US').format(Math.floor(floatValue));
+            tablePublicFloat.innerText = new Intl.NumberFormat('en-US').format(Math.ceil(floatValue));
         }
 
         if (lastUpdated) {
