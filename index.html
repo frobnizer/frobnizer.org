@@ -353,7 +353,7 @@ async function updateOnChainBalance() {
         const wethContract = new ethers.Contract(wethAddress, minABI, provider);
         const wethBalanceRaw = await wethContract.balanceOf(poolAddress);
         const wethString = ethers.utils.formatUnits(wethBalanceRaw, 18);
-        const fEth = parseFloat(wethString).toFixed(8);
+        const fEth = wethString.includes('.') ? wethString.split('.')[0] + '.' + wethString.split('.')[1].slice(0, 8) : wethString;
 
         if (tableEthLocked) {
             tableEthLocked.innerText = fEth;
