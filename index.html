@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The quintessential token built on Base.">
+<meta name="keywords" content="Frobnizer, FBZR, Base, Base chain, Base network, Uniswap, DEX, altcoin, token, crypto, asset, agentic, AI, vibe coded">
+<meta name="author" content="Frobnizer">
+<meta property="og:title" content="Frobnizer">
+<meta property="og:image" content="/assets/iMessage.png">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f6f4">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
+<meta name="apple-mobile-web-app-title" content="Frobnizer">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<title>Frobnizer</title>
+
+<link rel="stylesheet" href="candy.css">
+<link rel="alternate" type="application/rss+xml" title="Frobnizer Newsroom" href="/feed.xml">   
+<link rel="apple-touch-icon" sizes="512x512" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon.png">
+<link rel="icon" sizes="192x192" href="assets/android.png">
+<link rel="manifest" href="/manifest.json">
+  
+<a rel="me" href="https://mastodon.social/@frobnizer"></a>
+
+</head>
+
+<body>
+
+  <div class="top-banner" id="topBanner">
+    <span class="banner-text" id="bannerMessageText">$FBZR is now available to trade!</span>
+    <div class="banner-actions-right">
+        <a href="https://www.geckoterminal.com/base/pools/0x82ba42c4c5874b6b628768ede56616c073384842" 
+           class="banner-action-button" 
+           id="bannerActionButton" 
+           target="_blank" 
+           rel="noopener noreferrer">View Chart →</a>
+    </div>
+</div>
+
+    <div class="hero-section">
+        <h1><a href="index.html" class="hero-title-link">Frobnizer</a></h1>
+        <p class="subtitle">The quintessential token built on Base</p>
+    </div>
+
+    <section class="content-section splash-section">
+        <div class="container">
+            <div class="card splash">
+                <p>The name chosen for this artifical intelligence crafted and vibe-coded altcoin is inspired by a placeholder term that originated in hacker culture. Created without a fanciful roadmap and free from predefined utility that never materializes, it explores the true ability of collective narrative. There is no central authority deciding the direction, and none of the supply is allocated to a team or treasury reserve. Any perceived value is not found in unnecessary over-engineering or vague promises for the future, but in what it has the potential to become organically through an engaged community. It is less a product idea than a fairly launched experiment.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section contract-address-section">
+        <div class="container">
+            <h2>Contract Address</h2>
+            <div class="card contract-address-card"> 
+                <p class="contract-address-display" id="contractAddressValue" onclick="copyContractAddress()" title="Click to copy">0xBe600893926e95DaA7Aa699A373E826Ed4a0721a</p>
+                <svg class="copy-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="copyContractAddress()" title="Copy contract address">
+                    <rect x="8" y="4" width="12" height="14" stroke-width="2" stroke="currentColor" rx="2"/>
+                    <rect x="4" y="8" width="12" height="14" fill="currentColor" rx="2"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+    <section class="content-section project-resources-section">
+        <div class="container">
+            <h2>Acquire Frobnizer</h2>
+            <div class="project-resources card">
+<a href="https://app.uniswap.org/explore/tokens/base/0xbe600893926e95daa7aa699a373e826ed4a0721a">Uniswap</a>
+<a href="https://phantom.com/tokens/base/0xbe600893926e95daa7aa699a373e826ed4a0721a">Phantom</a>
+<a href="https://base.app/coin/base-mainnet/0xbe600893926e95daa7aa699a373e826ed4a0721a">Coinbase Wallet</a>
+<a href="https://swap.defillama.com/?chain=base&to=0xBe600893926e95DaA7Aa699A373E826Ed4a0721a&from=0x0000000000000000000000000000000000000000">LlamaSwap</a>
+            </div>
+        </div>
+    </section> 
+    <section class="content-section project-resources-section">
+        <div class="container">
+            <h2>Project Resources</h2>
+            <div class="project-resources card">
+                <a href="https://basescan.org/token/0xbe600893926e95daa7aa699a373e826ed4a0721a">BaseScan</a>
+                <a href="https://www.base.org/name/frobnizer">Basenames</a>
+                <a href="https://www.geckoterminal.com/base/pools/0x82ba42c4c5874b6b628768ede56616c073384842">GeckoTerminal</a>
+                <a href="https://app.ens.domains/frobnizer.org">ENS Profile</a>
+                <a href="https://frobnizer.medium.com">Medium</a>
+                <a href="https://github.com/frobnizer">GitHub</a>
+                <a href="https://t.me/frobnizer">Telegram</a>
+                <a href="https://discord.gg/3Z5NtBkPks">Discord</a>
+                <a href="https://farcaster.xyz/frobnizer">Farcaster</a>
+                <a href="https://x.com/@frobnizer">X (Twitter)</a>
+                <a href="https://bsky.app/profile/frobnizer.org">Bluesky</a>
+                <a href="https://mastodon.social/@frobnizer">Mastodon</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="content-section token-specifications-section">
+        <div class="container">
+            <h2>Market Analytics</h2>
+            <div class="token-specs card">
+                <table>
+                    <tr><td>Trade Price:</td><td id="tablePriceValue">Loading...</td></tr>
+                    <tr><td>Floor Value:</td><td id="tableFloorValue">Loading...</td></tr>
+                    <tr><td>Volume:</td><td id="tableVolumeUSD">Loading...</td></tr>
+                    <tr><td>Market Cap:</td><td id="tableMarketCapValue">Loading...</td></tr>
+                    <tr><td>Burned Liquidity:</td><td id="tableLiquidityValue">Loading...</td></tr>
+                    <tr><td>Backing Ratio:</td><td id="tableBackingValue">Loading...</td></tr>
+                    <tr><td>Pooled Frobnizer:</td><td id="tableSwappableValue">Loading...</td></tr>
+                    <tr><td>Pooled Ethereum:</td><td id="tableEthLocked">Loading...</td></tr>
+                    <tr><td>Base Asset Growth:</td><td id="tableEthGrowth">Loading...</td></tr>
+                    <tr><td>Deployment Age:</td><td id="tablePoolAge">Loading...</td></tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section token-specifications-section">
+        <div class="container">
+            <h2>Specifications</h2>
+            <div class="token-specs card">
+                <table>
+                    <tr><td>Name / Ticker:</td><td>Frobnizer (FBZR)</td></tr>
+                    <tr><td>Blockchain:</td><td>Base Mainnet</td></tr>
+                    <tr><td>Standard:</td><td>ERC-20</td></tr>
+                    <tr><td>Smart Contract:</td><td><a href="https://basescan.org/address/0xbe600893926e95daa7aa699a373e826ed4a0721a#code">Verified</a></td></tr>
+                    <tr><td>Ownership:</td><td>Renounced</td></tr>
+                    <tr><td>Maximum Supply:</td><td>420 Million</td></tr>
+                    <tr><td>Circulating Supply:</td><td>378 Million</td></tr>
+                    <tr><td>Total Burned:</td><td><a href="https://basescan.org/token/0xbe600893926e95daa7aa699a373e826ed4a0721a?a=0x000000000000000000000000000000000000dead">42.0 Million</a></td></tr>
+                    <tr><td>Buy/Sell/Trade Tax:</td><td>0%</td></tr>
+                    <tr><td>Team Allocation:</td><td>None</td></tr>
+                    <tr><td>Liquidity Pool:</td><td><a href="https://app.uniswap.org/explore/pools/base/0x82ba42C4C5874B6B628768Ede56616c073384842">Uniswap v3</a></td></tr>
+                    <tr><td>Liquidity Tokens:</td><td><a href="https://basescan.org/tx/0x137097d8c65985fdf26a7005b8891386c23fa90a952c54ee7e5fe3e7156e8e7b">100% Burned</a></td></tr>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <footer>Built with 💙 on Base<br>Latest Sync: <span id="lastUpdated">Loading...</span></footer>
+
+<script>
+
+function copyContractAddress() {
+    const addressEl = document.getElementById('contractAddressValue');
+    if (!addressEl || addressEl.classList.contains('js-copy-in-progress')) {
+        return; 
+    }
+
+    let addressToCopy = addressEl.dataset.originalAddress;
+    if (!addressToCopy) {
+
+        const currentText = addressEl.innerText.trim();
+        if (currentText.startsWith('0x')) {
+            addressToCopy = currentText;
+            addressEl.dataset.originalAddress = currentText;
+        } else {
+        
+            addressToCopy = "0xBe600893926e95DaA7Aa699A373E826Ed4a0721a"; 
+            addressEl.dataset.originalAddress = addressToCopy; 
+        }
+    }
+    
+    addressEl.classList.add('js-copy-in-progress');
+
+    navigator.clipboard.writeText(addressToCopy).then(() => {
+        addressEl.classList.add('copied-text-highlight');
+        addressEl.innerText = 'Copied to your clipboard!';
+        
+        setTimeout(() => {
+            addressEl.classList.remove('copied-text-highlight');
+        }, 750);
+        
+        setTimeout(() => {
+            addressEl.innerText = addressEl.dataset.originalAddress;
+            addressEl.classList.remove('js-copy-in-progress');
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy contract address:', err);
+        addressEl.innerText = 'Copy Failed. Try again.'; 
+        
+        setTimeout(() => {
+            addressEl.innerText = addressEl.dataset.originalAddress;
+            addressEl.classList.remove('js-copy-in-progress');
+        }, 2000);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const addressEl = document.getElementById('contractAddressValue');
+    if (addressEl) {
+        const originalAddress = addressEl.innerText.trim();
+        if (originalAddress.startsWith('0x')) {
+            addressEl.dataset.originalAddress = originalAddress;
+        }
+    }
+});
+
+function closeBanner() {
+    const banner = document.getElementById('topBanner');
+    if (banner) {
+        banner.style.display = 'none';
+    }
+}
+</script>
+
+<script>
+function formatWithSubscript(price) {
+    if (!price || price === 0) return "$0.00";
+    const priceStr = price.toFixed(20);
+    const match = priceStr.match(/^0\.(0+)/);
+    
+    if (match && match[1].length >= 4) {
+        const zeroCount = match[1].length;
+        const significant = priceStr.substring(match[0].length, match[0].length + 5);
+        return `$0.0<sub>${zeroCount}</sub>${significant}`;
+    }
+    return new Intl.NumberFormat('en-US', {
+        style: 'currency', currency: 'USD', minimumFractionDigits: 11, maximumFractionDigits: 11 
+    }).format(price);
+}
+
+function updatePoolAge() {
+    const tablePoolAge = document.getElementById('tablePoolAge');
+    if (!tablePoolAge) return;
+
+    const creationDate = new Date('2025-12-29T08:09:29Z');
+    const now = new Date();
+    
+    let years = now.getFullYear() - creationDate.getFullYear();
+    let months = now.getMonth() - creationDate.getMonth();
+    let days = now.getDate() - creationDate.getDate();
+    let hours = now.getHours() - creationDate.getHours();
+
+    if (hours < 0) { days--; hours += 24; }
+    if (days < 0) {
+        months--;
+        const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+        days += lastMonth;
+    }
+    if (months < 0) { years--; months += 12; }
+
+    let displayStr = "";
+
+    if (years > 0) {
+        displayStr = `${years} Year${years > 1 ? 's' : ''}, ${months} Month${months !== 1 ? 's' : ''}`;
+    } else if (months > 0) {
+        displayStr = `${months} Month${months > 1 ? 's' : ''}, ${days} Day${days !== 1 ? 's' : ''}`;
+    } else {
+        displayStr = `${days} Day${days !== 1 ? 's' : ''}, ${hours} Hour${hours !== 1 ? 's' : ''}`;
+    }
+
+    tablePoolAge.innerText = displayStr;
+}
+
+async function updateBannerPrice() {
+    const bannerText = document.getElementById('bannerMessageText');
+    const tablePriceValue = document.getElementById('tablePriceValue');
+    const tableFloorValue = document.getElementById('tableFloorValue');
+    const tableBackingValue = document.getElementById('tableBackingValue');
+    const tableLiquidityValue = document.getElementById('tableLiquidityValue');
+    const tableMarketCapValue = document.getElementById('tableMarketCapValue');
+    const tableVolumeUSD = document.getElementById('tableVolumeUSD');
+    const poolAddress = "0x82ba42C4C5874B6B628768Ede56616c073384842";
+    const trueSupply = 378000000;
+
+    try {
+        const response = await fetch(`https://api.geckoterminal.com/api/v2/networks/base/pools/${poolAddress}`);
+        const result = await response.json();
+
+        if (result && result.data && result.data.attributes) {
+            
+            const attr = result.data.attributes;
+            const rawLiquidity = parseFloat(attr.reserve_in_usd) || 0;
+            const truePrice = rawLiquidity / trueSupply; 
+            const tokenPrice = parseFloat(attr.base_token_price_usd);
+            const marketCap = tokenPrice * 378000000;
+
+            const formattedFloorValue = formatWithSubscript(truePrice);
+            const formattedTradePrice = formatWithSubscript(tokenPrice);
+
+            const formattedLiquidity = new Intl.NumberFormat('en-US', {
+                style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 
+            }).format(rawLiquidity);
+
+            const formattedMarketCap = new Intl.NumberFormat('en-US', {
+                style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 
+            }).format(marketCap);
+
+            const backingRatio = ((truePrice / tokenPrice) * 100).toFixed(2);
+
+            const volumeUSD = parseFloat(attr.volume_usd.h24) || 0;
+
+            const formattedVolumeUSD = new Intl.NumberFormat('en-US', {
+                style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 
+            }).format(volumeUSD);
+
+            if (bannerText) bannerText.innerHTML = `Current Market Price: ${formattedTradePrice}`;
+            if (tablePriceValue) tablePriceValue.innerHTML = formattedTradePrice;
+            if (tableFloorValue) tableFloorValue.innerHTML = formattedFloorValue;
+            if (tableBackingValue) tableBackingValue.innerText = backingRatio + "%";
+            if (tableLiquidityValue) tableLiquidityValue.innerText = formattedLiquidity;
+            if (tableMarketCapValue) tableMarketCapValue.innerText = formattedMarketCap;
+            if (tableVolumeUSD) tableVolumeUSD.innerText = formattedVolumeUSD;
+
+            updatePoolAge();
+        }
+    } catch (error) {
+        console.error("Data update failed:", error);
+    }
+}
+
+updateBannerPrice();
+setInterval(updateBannerPrice, 60000);
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+
+<script>
+async function updateOnChainBalance() {
+    const tableSwappableValue = document.getElementById('tableSwappableValue');
+    const tableEthLocked = document.getElementById('tableEthLocked');
+    const lastUpdated = document.getElementById('lastUpdated');
+    
+    const ALCHEMY_URL = "https://base-mainnet.g.alchemy.com/v2/pm1tNrjJlOtDOij5sSShV"; 
+    const poolAddress = "0x82ba42C4C5874B6B628768Ede56616c073384842";
+    const fbzrAddress = "0xBe600893926e95DaA7Aa699A373E826Ed4a0721a";
+    const wethAddress = "0x4200000000000000000000000000000000000006";
+
+    const minABI = ["function balanceOf(address owner) view returns (uint256)"];
+
+    try {
+        const provider = new ethers.providers.JsonRpcProvider(ALCHEMY_URL);
+        const wethContract = new ethers.Contract(wethAddress, minABI, provider);
+        const wethBalanceRaw = await wethContract.balanceOf(poolAddress);
+        const wethString = ethers.utils.formatUnits(wethBalanceRaw, 18);
+        const fEth = parseFloat(wethString).toFixed(8);
+
+        if (tableEthLocked) {
+            tableEthLocked.innerText = fEth;
+
+            const INITIAL_ETH = 0.00281;
+            const growthPercent = (((parseFloat(wethString) - INITIAL_ETH) / INITIAL_ETH) * 100).toFixed(2);
+            document.getElementById('tableEthGrowth').innerText = "+" + growthPercent + "%";
+        }
+
+        const fbzrContract = new ethers.Contract(fbzrAddress, minABI, provider);
+        const fbzrBalanceRaw = await fbzrContract.balanceOf(poolAddress);
+        const fbzrString = ethers.utils.formatUnits(fbzrBalanceRaw, 18);
+        const fFbzr = new Intl.NumberFormat('en-US').format(Math.floor(parseFloat(fbzrString)));
+
+        if (tableSwappableValue) {
+            tableSwappableValue.innerText = fFbzr;
+        }
+
+        if (lastUpdated) {
+            const now = new Date();
+            lastUpdated.innerText = now.toLocaleTimeString('en-GB', { 
+                hour12: false, 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit' 
+            }); 
+        }
+
+    } catch (error) {
+        console.error("Blockchain fetch failed:", error);
+    }
+}
+
+updateOnChainBalance();
+setInterval(updateOnChainBalance, 60000);
+</script>
+
+</body>
+</html>
