@@ -305,12 +305,15 @@ async function updateBannerPrice() {
                 style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 
             }).format(volumeUSD);
 
-            if (tableNetInflow && attr.volume_usd) {
-                const buysUSD = parseFloat(attr.volume_usd.h24_buys || 0);
-                const sellsUSD = parseFloat(attr.volume_usd.h24_sells || 0);
-                const netInflow = buysUSD - sellsUSD;
+            if (tableNetInflow && attr.price_change_percentage && attr.price_change_percentage.h24) {
+                const liquidity = parseFloat(attr.reserve_in_usd) || 0;
+                const priceChangePct = parseFloat(attr.price_change_percentage.h24) / 100;
+                const netInflow = liquidity * (Math.sqrt(1 + priceChangePct) - 1);
                 const prefix = netInflow >= 0 ? "+$" : "-$";
-                tableNetInflow.innerText = prefix + Math.abs(netInflow).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                tableNetInflow.innerText = prefix + Math.abs(netInflow).toLocaleString(undefined, {
+                    minimumFractionDigits: 2, 
+                    maximumFractionDigits: 2
+                });
             }
 
             if (tableTxCountValue && attr.transactions && attr.transactions.h24) {
