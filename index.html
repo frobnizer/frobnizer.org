@@ -306,15 +306,22 @@ async function updateBannerPrice() {
             }).format(volumeUSD);
 
             if (tableNetInflow && attr.price_change_percentage && attr.price_change_percentage.h24) {
-                const liquidity = parseFloat(attr.reserve_in_usd) || 0;
-                const priceChangePct = parseFloat(attr.price_change_percentage.h24) / 100;
-                const netInflow = liquidity * (Math.sqrt(1 + priceChangePct) - 1);
-                const prefix = netInflow >= 0 ? "+$" : "-$";
-                tableNetInflow.innerText = prefix + Math.abs(netInflow).toLocaleString(undefined, {
-                    minimumFractionDigits: 2, 
-                    maximumFractionDigits: 2
-                });
-            }
+               const liquidity = parseFloat(attr.reserve_in_usd) || 0;
+               const priceChangePct = parseFloat(attr.price_change_percentage.h24) / 100;
+               const volumeUSD = parseFloat(attr.volume_usd.h24) || 0;
+    
+               let netInflow = liquidity * (Math.sqrt(1 + priceChangePct) - 1);
+    
+            if (Math.abs(netInflow) > volumeUSD) {
+               netInflow = priceChangePct >= 0 ? volumeUSD : -volumeUSD;
+    }
+    
+            const prefix = netInflow >= 0 ? "+$" : "-$";
+                  tableNetInflow.innerText = prefix + Math.abs(netInflow).toLocaleString(undefined, {
+            minimumFractionDigits: 2, 
+            maximumFractionDigits: 2
+    });
+}
 
             if (tableTxCountValue && attr.transactions && attr.transactions.h24) {
                 const totalTxs = (attr.transactions.h24.buys || 0) + (attr.transactions.h24.sells || 0);
@@ -384,7 +391,6 @@ async function updateOnChainBalance() {
         const trueSupply = 378000000;
         const currentPooled = parseFloat(fbzrString);
         
-        // Community Holdings is the blockchain source (Total - Pooled)
         const communityValue = trueSupply - currentPooled;
 
         if (tableSwappableValue) {
@@ -395,7 +401,6 @@ async function updateOnChainBalance() {
             tableCommunityHoldings.innerText = new Intl.NumberFormat('en-US').format(Math.ceil(communityValue));
         }
 
-        // Public Float is the calculated sum of Pooled + Community
         if (tablePublicFloat) {
             const calculatedFloat = currentPooled + communityValue;
             tablePublicFloat.innerText = new Intl.NumberFormat('en-US').format(calculatedFloat);
