@@ -352,6 +352,16 @@ a:active {
     border-bottom: none;
 }
 
+    white-space: nowrap;
+    padding-right: 15px;
+}
+
+.token-specs table td:last-child {
+    text-align: right;
+    padding-right: 0;
+}
+
+
 /* project resources grid */
 .project-resources {
     display: grid;
