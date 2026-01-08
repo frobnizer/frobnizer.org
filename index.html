@@ -105,7 +105,6 @@
                     <tr><td>Trade Price:</td><td id="tablePriceValue">Loading...</td></tr>
                     <tr><td>Floor Value:</td><td id="tableFloorValue">Loading...</td></tr>
                     <tr><td>Daily Volume:</td><td id="tableVolumeUSD">Loading...</td></tr>
-                    <tr><td>Net Inflow:</td><td id="tableNetInflow">Loading...</td></tr>
                     <tr><td>Rolling Performance:</td><td id="tablePriceChangeValue">Loading...</td></tr>
                     <tr><td>Transactions:</td><td id="tableTxCountValue">Loading...</td></tr>
                     <tr><td>Market Cap:</td><td id="tableMarketCapValue">Loading...</td></tr>
@@ -270,7 +269,6 @@ async function updateBannerPrice() {
     const tableVolumeUSD = document.getElementById('tableVolumeUSD');
     const tableTxCountValue = document.getElementById('tableTxCountValue');
     const tablePriceChangeValue = document.getElementById('tablePriceChangeValue'); 
-    const tableNetInflow = document.getElementById('tableNetInflow');
     const poolAddress = "0x82ba42C4C5874B6B628768Ede56616c073384842";
     const trueSupply = 378000000;
 
@@ -304,24 +302,6 @@ async function updateBannerPrice() {
             const formattedVolumeUSD = new Intl.NumberFormat('en-US', {
                 style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 
             }).format(volumeUSD);
-
-            if (tableNetInflow && attr.price_change_percentage && attr.price_change_percentage.h24) {
-               const liquidity = parseFloat(attr.reserve_in_usd) || 0;
-               const priceChangePct = parseFloat(attr.price_change_percentage.h24) / 100;
-               const volumeUSD = parseFloat(attr.volume_usd.h24) || 0;
-    
-               let netInflow = liquidity * (Math.sqrt(1 + priceChangePct) - 1);
-    
-            if (Math.abs(netInflow) > volumeUSD) {
-               netInflow = priceChangePct >= 0 ? volumeUSD : -volumeUSD;
-    }
-    
-            const prefix = netInflow >= 0 ? "+$" : "-$";
-                  tableNetInflow.innerText = prefix + Math.abs(netInflow).toLocaleString(undefined, {
-            minimumFractionDigits: 2, 
-            maximumFractionDigits: 2
-    });
-}
 
             if (tableTxCountValue && attr.transactions && attr.transactions.h24) {
                 const totalTxs = (attr.transactions.h24.buys || 0) + (attr.transactions.h24.sells || 0);
