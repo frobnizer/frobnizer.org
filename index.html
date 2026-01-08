@@ -106,8 +106,7 @@
                     <tr><td>Floor Value:</td><td id="tableFloorValue">Loading...</td></tr>
                     <tr><td>Daily Volume:</td><td id="tableVolumeUSD">Loading...</td></tr>
                     <tr><td>Rolling Performance:</td><td id="tablePriceChangeValue">Loading...</td></tr>
-                    <tr><td>Transactions:</td><td id="tableTxCountValue">Loading...</td></tr>
-                    <tr><td>Sentiment:</td><td id="tableBuySellRatio">Loading...</td></tr>
+                    <tr><td>Transactions:</td><td id="tableBuySellRatio">Loading...</td></tr>
                     <tr><td>Market Cap:</td><td id="tableMarketCapValue">Loading...</td></tr>
                     <tr><td>Burned Liquidity:</td><td id="tableLiquidityValue">Loading...</td></tr>
                     <tr><td>Backing Ratio:</td><td id="tableBackingValue">Loading...</td></tr>
@@ -268,7 +267,6 @@ async function updateBannerPrice() {
     const tableLiquidityValue = document.getElementById('tableLiquidityValue');
     const tableMarketCapValue = document.getElementById('tableMarketCapValue');
     const tableVolumeUSD = document.getElementById('tableVolumeUSD');
-    const tableTxCountValue = document.getElementById('tableTxCountValue');
     const tablePriceChangeValue = document.getElementById('tablePriceChangeValue'); 
     const tableBuySellRatio = document.getElementById('tableBuySellRatio');
     const poolAddress = "0x82ba42C4C5874B6B628768Ede56616c073384842";
@@ -297,7 +295,7 @@ async function updateBannerPrice() {
                 style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 
             }).format(marketCap);
 
-              const backingRatio = ((truePrice / tokenPrice) * 100).toFixed(2);
+            const backingRatio = ((truePrice / tokenPrice) * 100).toFixed(2);
 
             const volumeUSD = parseFloat(attr.volume_usd.h24) || 0;
 
@@ -313,11 +311,6 @@ async function updateBannerPrice() {
                 const sellText = sells === 1 ? "Sale" : "Sales";
                 
                 tableBuySellRatio.innerText = `${buys} ${buyText} / ${sells} ${sellText}`;
-            }
-
-            if (tableTxCountValue && attr.transactions && attr.transactions.h24) {
-                const totalTxs = (attr.transactions.h24.buys || 0) + (attr.transactions.h24.sells || 0);
-                tableTxCountValue.innerText = totalTxs;
             }
 
             if (tablePriceChangeValue && attr.price_change_percentage && attr.price_change_percentage.h24) {
