@@ -4,6 +4,7 @@ This is the verifiable public record of all liquidity positions sent to the dEaD
 
 | Date (UTC) | NFT ID | Tokens Locked | Proof of Mint & Burn |
 | :--- | :--- | :--- | :--- |
+| 2026-01-08 | #8 4392141 | 4,999,579 FBZR / 0.0003885 WETH | [Mint Tx](https://basescan.org/tx/0xacccef13128fc2089b68f068e116a938d7a68ccf1930863885911fcf725568f7) / [Burn Tx](https://basescan.org/tx/0x6e47b2766a2fc71a07b64e5b2067464a1a269775edbfde985f515beee1975789) |
 | 2026-01-08 | #7 4392004 | 199,999,579 FBZR / 0.01513 WETH | [Mint Tx](https://basescan.org/tx/0xfc85caaf6e43b5e774a95cd5b41261bf9795d7e1132602c578dd40d338b71305) / [Burn Tx](https://basescan.org/tx/0xd601f35d8f601427a2fc0af38cc9e2cc89921e0cd1a2d05895037d17e1635439) |
 | 2026-01-06 | #6 4384192 | 5,749,999 FBZR / 0.0003283 WETH | [Mint Tx](https://basescan.org/tx/0x7fab5a189a19922da99a3a2027f0980a3d53b6e7d854238c0682aab894af4008) / [Burn Tx](https://basescan.org/tx/0xeb5f628b53bd9b6467e3f69c8cbd9bb8ed4ac7a6a02322080aeb28e0d8f9f378) |
 | 2026-01-06 | #5 4383376 | 1,999,999 FBZR / 0.00009538 WETH | [Mint Tx](https://basescan.org/tx/0x5595eea7e6a0aeff854e45e922d5b71997a9e959c7c4bf8f5f22fff8234fc250) / [Burn Tx](https://basescan.org/tx/0x253dc7f05b136ae8af2c5db94ca391f67f8127014c0e527f33077a377caa09ab) |
