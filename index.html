@@ -359,8 +359,9 @@ async function updateOnChainBalance() {
         if (tableEthLocked) {
             tableEthLocked.innerText = fEth;
             const INITIAL_ETH = 0.00281;
-            const growthPercent = (((parseFloat(wethString) - INITIAL_ETH) / INITIAL_ETH) * 100).toFixed(2);
-            document.getElementById('tableEthGrowth').innerText = "+" + growthPercent + "%";
+            const growthPercentRaw = ((parseFloat(wethString) - INITIAL_ETH) / INITIAL_ETH) * 100;
+            const growthPercentFormatted = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(growthPercentRaw);
+                  document.getElementById('tableEthGrowth').innerText = "+" + growthPercentFormatted + "%";
         }
 
         const fbzrContract = new ethers.Contract(fbzrAddress, minABI, provider);
