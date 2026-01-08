@@ -342,6 +342,7 @@ a:active {
     border: none;
     border-bottom: 1px solid var(--table-border-color);
     vertical-align: top;
+    white-space: nowrap;
 }
 
 .token-specs td:last-child {
@@ -350,15 +351,6 @@ a:active {
 
 .token-specs tr:last-child td {
     border-bottom: none;
-}
-
-    white-space: nowrap;
-    padding-right: 15px;
-}
-
-.token-specs table td:last-child {
-    text-align: right;
-    padding-right: 0;
 }
 
 
