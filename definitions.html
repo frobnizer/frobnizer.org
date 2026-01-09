@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Definitions • Frobnizer</title>
+    <link rel="stylesheet" href="candy.css" /> 
+    <style>
+        .definition-item { margin-bottom: 1.5em; }
+        .definition-item strong { color: var(--h1-color); }
+        .meta-line { display: block; margin-top: 0.25em; font-size: 0.95em; }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <h1><a href="index.html" class="hero-title-link">Frobnizer</a></h1>
+        <p class="subtitle">The quintessential token built on Base</p>
+    </div>
+
+    <section class="content-section post-page-content">
+        <div class="container">
+
+            <article class="news-post card">
+                <h2 class="post-title">Market Analytics</h2> 
+                <p>These indicators help traders assess market depth, fundamental value, and project health.</p>
+
+                <div class="definition-item">
+                    <strong>Trade Price</strong><br>
+                    The market price as determined by the latest executed trade.<br>
+                    <span class="meta-line"><strong>Utility:</strong> Provides real-time entry/exit valuation.</span>
+                </div>
+
+                <div class="definition-item">
+                    <strong>Floor Value</strong><br>
+                    The intrinsic value of each token if the liquidity pool were distributed across the entire supply.<br>
+                    <span class="meta-line"><strong>Formula:</strong> Burned Liquidity ÷ Public Float</span>
+                    <span class="meta-line"><strong>Utility:</strong> Establishes the fundamental price floor.</span>
+                </div>
+
+                <div class="definition-item">
+                    <strong>Daily Volume</strong><br>
+                    The total value of buys and sells in a trailing 24-hour window.<br>
+                    <span class="meta-line"><strong>Utility:</strong> Measures market liquidity and interest levels.</span>
+                </div>
+
+                <div class="definition-item">
+                    <strong>Market Cap</strong><br>
+                    The total market value of the project based on the latest trade.<br>
+                    <span class="meta-line"><strong>Formula:</strong> Trade Price × Public Float</span>
+                </div>
+
+                <div class="definition-item">
+                    <strong>Community Equity</strong><br>
+                    The current market value of all tokens held outside the liquidity pool.<br>
+                    <span class="meta-line"><strong>Formula:</strong> Trade Price × Currently Held</span>
+                    <span class="meta-line"><strong>Utility:</strong> Represents the total wealth held by the community.</span>
+                </div>
+
+                <div class="definition-item">
+                    <strong>Burned Liquidity</strong><br>
+                    The total USD value of the FBZR and WETH assets paired in the liquidity pool.<br>
+                    <span class="meta-line"><strong>Utility:</strong> Confirms the size and permanence of the trading environment.</span>
+                </div>
+
+                <div class="definition-item">
+                    <strong>Liquidity Coverage</strong><br>
+                    The value of the liquidity pool divided by the community equity.<br>
+                    <span class="meta-line"><strong>Formula:</strong> Burned Liquidity ÷ Community Equity</span>
+                    <span class="meta-line"><strong>Utility:</strong> Measures the pool's ability to absorb community sell pressure.</span>
+                </div>
+
+                <div class="definition-item">
+                    <strong>Backing Ratio</strong><br>
+                    The percentage of the trade price that is fundamentally supported by the floor value.<br>
+                    <span class="meta-line"><strong>Formula:</strong> (Floor Value ÷ Trade Price) × 100</span>
+                    <span class="meta-line"><strong>Utility:</strong> Indicates price stability and "over-extension" relative to the floor.</span>
+                </div>
+
+                <div class="definition-item">
+                    <strong>Rolling Performance</strong><br>
+                    The price change in a trailing 24-hour window, represented as a percentage.<br>
+                    <span class="meta-line"><strong>Utility:</strong> Tracks short-term momentum.</span>
+                </div>
+
+                <div class="definition-item">
+                    <strong>Transactions</strong><br>
+                    The total number of buys and sells in a trailing 24-hour window.<br>
+                    <span class="meta-line"><strong>Utility:</strong> Reflects network engagement and frequency of activity.</span>
+                </div>
+            </article>
+            
+            <article class="news-post card">
+                <h2 class="post-title">On-Chain Specifications</h2> 
+                <p>Real-time data points derived directly from the Base blockchain reserves and token supply.</p>
+
+                <div class="definition-item">
+                    <strong>Public Float</strong><br>
+                    The total supply of tokens that are either in the liquidity pool or held by the community.<br>
+                    <span class="meta-line"><strong>Utility:</strong> Defines the maximum supply potentially available for trading.</span>
+                </div>
+
+                <div class="definition-item">
+                    <strong>Currently Held</strong><br>
+                    The number of tokens in circulation that are not in the liquidity pool.<br>
+                    <span class="meta-line"><strong>Formula:</strong> Public Float - Pooled Frobnizer</span>
+                </div>
+
+                <div class="definition-item">
+                    <strong>Pooled Frobnizer</strong><br>
+                    The number of FBZR tokens currently locked in the liquidity pool.<br>
+                    <span class="meta-line"><strong>Utility:</strong> Monitors token scarcity within the automated market maker (AMM).</span>
+                </div>
+
+                <div class="definition-item">
+                    <strong>Pooled Ethereum</strong><br>
+                    The amount of WETH paired with FBZR in the liquidity pool.<br>
+                    <span class="meta-line"><strong>Utility:</strong> Measures the available buy-side liquidity.</span>
+                </div>
+
+                <div class="definition-item">
+                    <strong>Base Asset Growth</strong><br>
+                    The increase of WETH in the liquidity pool since deployment, expressed as a percentage.<br>
+                    <span class="meta-line"><strong>Formula:</strong> [(Current WETH - Initial WETH) ÷ Initial WETH] × 100</span>
+                    <span class="meta-line"><strong>Utility:</strong> Tracks the long-term growth of the project’s base reserves.</span>
+                </div>
+
+                <div class="definition-item">
+                    <strong>Deployment Age</strong><br>
+                    How long ago the liquidity pool was created.<br>
+                    <span class="meta-line"><strong>Utility:</strong> Provides transparency regarding project maturity.</span>
+                </div>
+            </article>
+            
+            <a href="index.html" class="button-link back-nav">← Home</a>
+        </div> 
+    </section>
+
+    <footer>Built with 💙 on Base</footer>
+
+</body>
+</html>
