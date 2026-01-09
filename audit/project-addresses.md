@@ -2,7 +2,7 @@
 
 This document provides a verifiable record of blockchain addresses held by the Frobinator. They were established to ensure Frobnizer branded `base.eth` names remain within the project's control for future use on the Ethereum/Base network. Each of them symbolically holds exactly **420 FBZR**.
 
-| Identity | Address | Role / Status | Activity Note |
+| Identity | Address | Role | Activity Note |
 | :--- | :--- | :--- | :--- |
 | `frobnizer.base.eth` | [...Bdf9CC](https://basescan.org/address/0x5f48BCfD4f47de530BAd4Ae8FCb22943fDBdf9CC) | Project Creator | Original contract deployer address. |
 | `frobnizercom.base.eth` | [...e5bcca](https://basescan.org/address/0xf4cd6b709aa144d81deca816d72cf138c0e5bcca) | Liquidity Support | Strategic buys used to deepen liquidity and reinforce the price floor. |
