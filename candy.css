@@ -523,20 +523,20 @@ sub {
 
 .analytics-header-container {
     display: flex;
-    align-items: center;
-    gap: 12px;
+    align-items: baseline;
+    gap: 10px;
     margin-bottom: 0.4em;
 }
 
 .info-icon-header {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     color: var(--link-color-val);
     cursor: pointer;
     transition: opacity 0.2s ease;
-    display: flex;
-    
-    transform: translateY(4px); 
+    display: inline-flex;
+    position: relative;
+    top: 2px; 
 }
 
 .info-icon-header:hover {
@@ -544,6 +544,6 @@ sub {
 }
 
 .analytics-header-container h2 {
-    margin-bottom: 0;
-    line-height: 1;
+    margin-bottom: 0.4em;
+    display: inline-block;
 }
