@@ -336,12 +336,9 @@ a:active {
     table-layout: auto;
 }
 
-/* UNIVERSAL TABLE FIX: Using column-rule to create the split 
-   and standard borders to ensure alignment */
 .token-specs td {
     padding: 0.75em 0.5em;
     text-align: left;
-    border: none;
     border-bottom: 1px solid var(--table-border-color);
     vertical-align: top;
     white-space: nowrap;
@@ -363,33 +360,23 @@ a:active {
         display: inline-table;
         width: 100%;
         break-inside: avoid;
+        -webkit-column-break-inside: avoid;
     }
 
-    /* Force all bottom borders on by default */
-    .token-specs td {
-        border-bottom: 1px solid var(--table-border-color) !important;
-    }
-
-    /* Target the very last row of the entire table and hide its border */
-    .token-specs tr:last-child td {
-        border-bottom: none !important;
-    }
-
-    /* Target the end of column 1 using the logic that column 1 
-       ends halfway through the list */
-    .token-specs tr:nth-child(6) td,  /* for 12 row table */
-    .token-specs tr:nth-child(9) td {  /* for 18 row table */
+    /* Remove borders from the last row of each column */
+    .token-specs tr:nth-last-child(1) td,   /* The very bottom right row */
+    .token-specs tr:nth-of-type(6) td,      /* Bottom of Col 1 for 12-row table */
+    .token-specs tr:nth-of-type(8) td       /* Bottom of Col 1 for 16-row table */
+    {
         border-bottom: none !important;
     }
 }
 
-/* mobile specific: ensures the very last row in single column has no line */
 @media (max-width: 767px) {
     .token-specs tr:last-child td {
         border-bottom: none;
     }
 }
-
 
 /* project resources grid */
 .project-resources {
