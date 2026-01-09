@@ -349,6 +349,15 @@ a:active {
         width: 100%;
         break-inside: avoid;
     }
+
+    .token-specs tr:last-child td {
+        border-bottom: 1px solid var(--table-border-color) !important;
+    }
+
+    .token-specs table tbody tr:nth-last-child(1) td,
+    .token-specs table tbody tr:nth-last-child(2) td {
+        border-bottom: none !important;
+    }
 }
 
 .token-specs td {
