@@ -309,7 +309,7 @@ async function updateBannerPrice() {
                 const sells = attr.transactions.h24.sells || 0;
                 
                 const buyText = buys === 1 ? "Buy" : "Buys";
-                const sellText = sells === 1 ? "Sale" : "Sales";
+                const sellText = sells === 1 ? "Sell" : "Sells";
                 
                 tableBuySellRatio.innerText = `${buys} ${buyText} / ${sells} ${sellText}`;
             }
