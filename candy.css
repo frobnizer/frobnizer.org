@@ -367,11 +367,17 @@ a:active {
         break-inside: avoid;
     }
 
+    /* Force Row 1 (Col 1 Start) to have no top line */
     .token-specs tr:first-child td {
         border-top: none !important;
     }
 
-    .token-specs tr:nth-child(7) td,
+    /* Target Col 2 Start for 12-row table (Row 7) */
+    .token-specs tr:nth-child(7) td {
+        border-top: none !important;
+    }
+
+    /* Target Col 2 Start for 18-row table (Row 10) */
     .token-specs tr:nth-child(10) td {
         border-top: none !important;
     }
