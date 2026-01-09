@@ -102,6 +102,7 @@
                     <tr><td>Rolling Performance:</td><td id="tablePriceChangeValue">Loading...</td></tr>
                     <tr><td>Transactions:</td><td id="tableBuySellRatio">Loading...</td></tr>
                     <tr><td>Market Cap:</td><td id="tableMarketCapValue">Loading...</td></tr>
+                    <tr><td>Tradable Market Cap:</td><td id="tableTradableCapValue">Loading...</td></tr>
                     <tr><td>Burned Liquidity:</td><td id="tableLiquidityValue">Loading...</td></tr>
                     <tr><td>Backing Ratio:</td><td id="tableBackingValue">Loading...</td></tr>
                     <tr><td>Public Float:</td><td id="tablePublicFloat">Loading...</td></tr>
@@ -205,6 +206,8 @@ function closeBanner() {
 </script>
 
 <script>
+let lastTradePrice = 0;
+
 function formatWithSubscript(price) {
     if (!price || price === 0) return "$0.00";
     const priceStr = price.toFixed(20);
@@ -276,6 +279,7 @@ async function updateBannerPrice() {
             const rawLiquidity = parseFloat(attr.reserve_in_usd) || 0;
             const truePrice = rawLiquidity / trueSupply; 
             const tokenPrice = parseFloat(attr.base_token_price_usd);
+            lastTradePrice = tokenPrice;
             const marketCap = tokenPrice * trueSupply;
 
             const formattedFloorValue = formatWithSubscript(truePrice);
@@ -339,6 +343,7 @@ async function updateOnChainBalance() {
     const tableSwappableValue = document.getElementById('tableSwappableValue');
     const tablePublicFloat = document.getElementById('tablePublicFloat');
     const tableCommunityHoldings = document.getElementById('tableCommunityHoldings');
+    const tableTradableCapValue = document.getElementById('tableTradableCapValue');
     const tableEthLocked = document.getElementById('tableEthLocked');
     const lastUpdated = document.getElementById('lastUpdated');
     
@@ -379,6 +384,13 @@ async function updateOnChainBalance() {
 
         if (tableCommunityHoldings) {
             tableCommunityHoldings.innerText = new Intl.NumberFormat('en-US').format(Math.ceil(communityValue));
+        }
+
+        if (tableTradableCapValue && lastTradePrice > 0) {
+            const tradableMC = communityValue * lastTradePrice;
+            tableTradableCapValue.innerText = new Intl.NumberFormat('en-US', {
+                style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 
+            }).format(tradableMC);
         }
 
         if (tablePublicFloat) {
