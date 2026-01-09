@@ -336,6 +336,21 @@ a:active {
     table-layout: auto;
 }
 
+/* two-column layout for desktop and iPad */
+@media (min-width: 768px) {
+    .token-specs table tbody {
+        display: block;
+        column-count: 2;
+        column-gap: 4.5em;
+    }
+
+    .token-specs table tr {
+        display: inline-table;
+        width: 100%;
+        break-inside: avoid;
+    }
+}
+
 .token-specs td {
     padding: 0.75em 0.5em;
     text-align: left;
