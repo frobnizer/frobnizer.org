@@ -336,6 +336,23 @@ a:active {
     table-layout: auto;
 }
 
+.token-specs td {
+    padding: 0.75em 0.5em;
+    text-align: left;
+    border: none;
+    border-top: 1px solid var(--table-border-color);
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.token-specs tr:first-child td {
+    border-top: none;
+}
+
+.token-specs td:last-child {
+    text-align: right;
+}
+
 /* two-column layout for desktop and iPad */
 @media (min-width: 768px) {
     .token-specs table tbody {
@@ -350,33 +367,15 @@ a:active {
         break-inside: avoid;
     }
 
-    .token-specs tr td {
-        border-bottom: 1px solid var(--table-border-color) !important;
+    .token-specs tr:first-child td {
+        border-top: none !important;
     }
 
-    .token-specs tr:nth-last-child(1) td,
-    .token-specs tr:nth-last-child(1 of :nth-child(odd)) td {
-        border-bottom: none !important;
+    .token-specs tr:nth-child(7) td,
+    .token-specs tr:nth-child(10) td {
+        border-top: none !important;
     }
 }
-
-.token-specs td {
-    padding: 0.75em 0.5em;
-    text-align: left;
-    border: none;
-    border-bottom: 1px solid var(--table-border-color);
-    vertical-align: top;
-    white-space: nowrap;
-}
-
-.token-specs td:last-child {
-    text-align: right;
-}
-
-.token-specs tr:last-child td {
-    border-bottom: none;
-}
-
 
 /* project resources grid */
 .project-resources {
