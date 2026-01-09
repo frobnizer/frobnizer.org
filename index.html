@@ -103,6 +103,7 @@
                     <tr><td>Transactions:</td><td id="tableBuySellRatio">Loading...</td></tr>
                     <tr><td>Market Cap:</td><td id="tableMarketCapValue">Loading...</td></tr>
                     <tr><td>Tradable Market Cap:</td><td id="tableTradableCapValue">Loading...</td></tr>
+                    <tr><td>Liquidity Multiplier:</td><td id="tableLiquidityMultiplier">Loading...</td></tr>
                     <tr><td>Burned Liquidity:</td><td id="tableLiquidityValue">Loading...</td></tr>
                     <tr><td>Backing Ratio:</td><td id="tableBackingValue">Loading...</td></tr>
                     <tr><td>Public Float:</td><td id="tablePublicFloat">Loading...</td></tr>
@@ -207,6 +208,7 @@ function closeBanner() {
 
 <script>
 let lastTradePrice = 0;
+let lastLiquidityUSD = 0;
 
 function formatWithSubscript(price) {
     if (!price || price === 0) return "$0.00";
@@ -277,6 +279,7 @@ async function updateBannerPrice() {
             
             const attr = result.data.attributes;
             const rawLiquidity = parseFloat(attr.reserve_in_usd) || 0;
+            lastLiquidityUSD = rawLiquidity;
             const truePrice = rawLiquidity / trueSupply; 
             const tokenPrice = parseFloat(attr.base_token_price_usd);
             lastTradePrice = tokenPrice;
@@ -344,6 +347,7 @@ async function updateOnChainBalance() {
     const tablePublicFloat = document.getElementById('tablePublicFloat');
     const tableCommunityHoldings = document.getElementById('tableCommunityHoldings');
     const tableTradableCapValue = document.getElementById('tableTradableCapValue');
+    const tableLiquidityMultiplier = document.getElementById('tableLiquidityMultiplier');
     const tableEthLocked = document.getElementById('tableEthLocked');
     const lastUpdated = document.getElementById('lastUpdated');
     
@@ -391,6 +395,11 @@ async function updateOnChainBalance() {
             tableTradableCapValue.innerText = new Intl.NumberFormat('en-US', {
                 style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 
             }).format(tradableMC);
+
+            if (tableLiquidityMultiplier && lastLiquidityUSD > 0 && tradableMC > 0) {
+                const multiplier = lastLiquidityUSD / tradableMC;
+                tableLiquidityMultiplier.innerText = multiplier.toFixed(2) + "x";
+            }
         }
 
         if (tablePublicFloat) {
