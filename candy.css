@@ -521,28 +521,30 @@ sub {
     font-size: 0.7em;
 }
 
-.info-card-container {
-    position: relative;
+.analytics-header-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0.4em;
 }
 
-.info-icon {
-    position: absolute;
-    top: 0.8em;
-    right: 0.8em;
-    width: 26px;
-    height: 26px;
+.info-icon-header {
+    width: 24px;
+    height: 24px;
     color: var(--link-color-val);
     cursor: pointer;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    z-index: 10;
+    transition: opacity 0.2s ease;
+    display: block;
 }
 
-.info-icon:hover {
+.info-icon-header:hover {
     opacity: 0.7;
-    transform: scale(1.05);
 }
 
 .token-specs.card {
-    padding-top: 1.5em;
+    padding: 1.5em;
 }
 
+.analytics-header-container h2 {
+    margin-bottom: 0;
+}
