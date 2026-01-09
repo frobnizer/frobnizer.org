@@ -336,12 +336,16 @@ a:active {
     table-layout: auto;
 }
 
+.token-specs tr {
+    border-bottom: 1px solid var(--table-border-color);
+}
+
 .token-specs td {
     padding: 0.75em 0.5em;
     text-align: left;
-    border-bottom: 1px solid var(--table-border-color);
     vertical-align: top;
     white-space: nowrap;
+    border-bottom: none;
 }
 
 .token-specs td:last-child {
@@ -363,17 +367,16 @@ a:active {
         -webkit-column-break-inside: avoid;
     }
 
-    /* Remove borders from the last row of each column */
-    .token-specs tr:nth-last-child(1) td,   /* The very bottom right row */
-    .token-specs tr:nth-of-type(6) td,      /* Bottom of Col 1 for 12-row table */
-    .token-specs tr:nth-of-type(8) td       /* Bottom of Col 1 for 16-row table */
+    .token-specs tr:last-child,
+    .token-specs tr:nth-of-type(6),
+    .token-specs tr:nth-of-type(8)
     {
         border-bottom: none !important;
     }
 }
 
 @media (max-width: 767px) {
-    .token-specs tr:last-child td {
+    .token-specs tr:last-child {
         border-bottom: none;
     }
 }
