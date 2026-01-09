@@ -1,8 +1,6 @@
-## 🛡️ Project Addresses
+## Project Addresses
 
 This document provides a verifiable record of blockchain addresses held by the Frobinator. They were established to ensure Frobnizer branded `base.eth` names remain within the project's control for future use on the Ethereum/Base network. Each of them symbolically holds exactly **420 FBZR**.
-
-### Wallet Directory
 
 | Identity | Address | Role / Status | Activity Note |
 | :--- | :--- | :--- | :--- |
