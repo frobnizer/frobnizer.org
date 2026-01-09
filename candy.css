@@ -521,32 +521,28 @@ sub {
     font-size: 0.7em;
 }
 
-/* info icon alignment */
-.header-with-icon {
+.info-card-container {
     position: relative;
-    display: inline-block;
-    width: auto;
 }
 
-/* info icon styling */
 .info-icon {
     position: absolute;
     top: 0.8em;
-    right: -35px;
+    right: 0.8em;
     width: 26px;
     height: 26px;
     color: var(--link-color-val);
     cursor: pointer;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 10;
 }
 
 .info-icon:hover {
     opacity: 0.7;
+    transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-    .header-with-icon {
-        display: block;
-        margin-right: 40px;
-    }
+.token-specs.card {
+    padding-top: 1.5em;
 }
+
