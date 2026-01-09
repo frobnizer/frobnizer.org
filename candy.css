@@ -512,11 +512,41 @@ footer {
     box-sizing: border-box;
 }
 
-/* Prevent subscripts from increasing row height */
+/* prevent subscripts from increasing row height */
 sub {
     line-height: 0;
     position: relative;
     vertical-align: baseline;
     bottom: -0.2em;
     font-size: 0.7em;
+}
+
+/* info icon alignment */
+.header-with-icon {
+    position: relative;
+    display: inline-block;
+    width: auto;
+}
+
+/* info icon styling */
+.info-icon {
+    position: absolute;
+    top: 0.8em;
+    right: -35px;
+    width: 26px;
+    height: 26px;
+    color: var(--link-color-val);
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.info-icon:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .header-with-icon {
+        display: block;
+        margin-right: 40px;
+    }
 }
