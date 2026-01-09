@@ -350,12 +350,12 @@ a:active {
         break-inside: avoid;
     }
 
-    .token-specs tr:last-child td {
+    .token-specs tr td {
         border-bottom: 1px solid var(--table-border-color) !important;
     }
 
-    .token-specs table tbody tr:nth-last-child(1) td,
-    .token-specs table tbody tr:nth-last-child(2) td {
+    .token-specs tr:nth-last-child(1) td,
+    .token-specs tr:nth-last-child(1 of :nth-child(odd)) td {
         border-bottom: none !important;
     }
 }
