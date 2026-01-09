@@ -529,14 +529,14 @@ sub {
 }
 
 .info-icon-header {
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
     color: var(--link-color-val);
     cursor: pointer;
     transition: opacity 0.2s ease;
     display: inline-flex;
     position: relative;
-    top: 2px; 
+    top: 1px; 
 }
 
 .info-icon-header:hover {
