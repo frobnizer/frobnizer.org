@@ -102,7 +102,7 @@
                     <tr><td>Rolling Performance:</td><td id="tablePriceChangeValue">Loading...</td></tr>
                     <tr><td>Transactions:</td><td id="tableBuySellRatio">Loading...</td></tr>
                     <tr><td>Market Cap:</td><td id="tableMarketCapValue">Loading...</td></tr>
-                    <tr><td>Community Equity:</td><td id="tableTradableCapValue">Loading...</td></tr>
+                    <tr><td>Community Equity:</td><td id="tableCommunityEquity">Loading...</td></tr>
                     <tr><td>Burned Liquidity:</td><td id="tableLiquidityValue">Loading...</td></tr>
                     <tr><td>Liquidity Coverage:</td><td id="tableLiquidityMultiplier">Loading...</td></tr>
                     <tr><td>Backing Ratio:</td><td id="tableBackingValue">Loading...</td></tr>
@@ -346,7 +346,7 @@ async function updateOnChainBalance() {
     const tableSwappableValue = document.getElementById('tableSwappableValue');
     const tablePublicFloat = document.getElementById('tablePublicFloat');
     const tableCommunityHoldings = document.getElementById('tableCommunityHoldings');
-    const tableTradableCapValue = document.getElementById('tableTradableCapValue');
+    const tableCommunityEquity = document.getElementById('tableCommunityEquity');
     const tableLiquidityMultiplier = document.getElementById('tableLiquidityMultiplier');
     const tableEthLocked = document.getElementById('tableEthLocked');
     const lastUpdated = document.getElementById('lastUpdated');
@@ -390,9 +390,9 @@ async function updateOnChainBalance() {
             tableCommunityHoldings.innerText = new Intl.NumberFormat('en-US').format(Math.ceil(communityValue));
         }
 
-        if (tableTradableCapValue && lastTradePrice > 0) {
+        if (tableCommunityEquity && lastTradePrice > 0) {
             const tradableMC = communityValue * lastTradePrice;
-            tableTradableCapValue.innerText = new Intl.NumberFormat('en-US', {
+            tableCommunityEquity.innerText = new Intl.NumberFormat('en-US', {
                 style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 
             }).format(tradableMC);
 
