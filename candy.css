@@ -336,16 +336,13 @@ a:active {
     table-layout: auto;
 }
 
-.token-specs tr {
-    border-bottom: 1px solid var(--table-border-color);
-}
-
+/* FIX: Using box-shadow instead of border to force line visibility across columns */
 .token-specs td {
     padding: 0.75em 0.5em;
     text-align: left;
     vertical-align: top;
     white-space: nowrap;
-    border-bottom: none;
+    box-shadow: 0 1px 0 0 var(--table-border-color); /* The line replacement */
 }
 
 .token-specs td:last-child {
@@ -367,17 +364,18 @@ a:active {
         -webkit-column-break-inside: avoid;
     }
 
-    .token-specs tr:last-child,
-    .token-specs tr:nth-of-type(6),
-    .token-specs tr:nth-of-type(8)
+    /* SPECIFICALLY remove the line for the items at the bottom of each column */
+    .token-specs tr:last-child td,          /* Bottom of Column 2 */
+    .token-specs tr:nth-of-type(6) td,      /* Bottom of Col 1 (12-row table) */
+    .token-specs tr:nth-of-type(8) td       /* Bottom of Col 1 (16-row table) */
     {
-        border-bottom: none !important;
+        box-shadow: none !important;
     }
 }
 
 @media (max-width: 767px) {
-    .token-specs tr:last-child {
-        border-bottom: none;
+    .token-specs tr:last-child td {
+        box-shadow: none;
     }
 }
 
