@@ -298,7 +298,7 @@ a:active {
     margin-bottom: 0.75em;
     border: 1px solid rgba(0, 0, 0, 0.09);
     background-clip: padding-box;
-    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.03);
     transition: box-shadow 0.3s ease-in-out;
     width: 100%;
     box-sizing: border-box;
