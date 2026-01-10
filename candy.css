@@ -298,7 +298,7 @@ a:active {
     margin-bottom: 0.75em;
     border: 1px solid rgba(0, 0, 0, 0.09);
     background-clip: padding-box;
-    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.3s ease-in-out;
     width: 100%;
     box-sizing: border-box;
@@ -311,7 +311,7 @@ a:active {
 @media (prefers-color-scheme: dark) {
     .card {
         background: var(--card-bg-dark-val);
-        border: 1px solid rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.09);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     }
 }
