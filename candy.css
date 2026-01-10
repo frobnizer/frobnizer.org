@@ -370,41 +370,35 @@ a:active {
     }
 }
 
-/* 1. Base Project Resources Grid */
+/* project resources grid */
 .project-resources {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile portrait */
-    row-gap: 0; 
-    column-gap: 1.5em;
+    /* Forces exactly 4 columns for everything above phone portrait */
+    grid-template-columns: repeat(2, auto); 
+    row-gap: 0;
+    /* This is the key: it pushes the right column to the absolute edge */
+    justify-content: space-between; 
     width: 100%;
     box-sizing: border-box;
-    /* REDUCED TOP/BOTTOM PADDING: 15px matches your Analytics table's edge-to-text distance */
-    /* LEFT/RIGHT PADDING: 25px ensures the first/last columns hug the edges correctly */
+    /* Matches the exact edge padding of your analytics table */
     padding: 15px 25px; 
 }
 
 .project-resources a {
-    padding: 8px 0; /* Tightened vertical padding to match table row height */
+    /* Vertical padding to match the 'height' of table rows */
+    padding: 10px 0; 
     display: block;
     text-align: left;
     white-space: nowrap;
     text-decoration: none;
-    border: none;
 }
 
-/* 2. iPhone Landscape (specifically targeting small screens) */
-@media (min-width: 480px) and (max-width: 767px) {
+/* Tablet / Desktop / iPhone Landscape */
+@media (min-width: 480px) {
     .project-resources {
-        grid-template-columns: repeat(4, 1fr); /* FORCED 4 COLUMNS */
+        /* Simplified to 4 columns across all larger devices */
+        grid-template-columns: repeat(4, auto);
         padding: 15px 25px;
-    }
-}
-
-/* 3. iPad & Desktop */
-@media (min-width: 768px) {
-    .project-resources {
-        grid-template-columns: repeat(5, 1fr); /* 5 columns for larger screens */
-        padding: 15px 30px; 
     }
 }
 
