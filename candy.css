@@ -587,13 +587,25 @@ sub {
     transition: opacity 0.2s ease;
     display: inline-flex;
     position: relative;
-    top: 1.5px;
+    vertical-align: middle; 
+    position: relative;
+    transform: translateY(-1px);
     opacity: 0.8; 
 }
 
 .info-icon-header:hover {
     opacity: 0.6;
 }
+
+
+
+    
+
+
+
+
+
+
 
 .analytics-header-container h2 {
     margin-bottom: 0.4em;
