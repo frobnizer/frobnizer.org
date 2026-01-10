@@ -142,7 +142,7 @@ h1, h2, .metric-name {
     background-color: var(--banner-button-bg);
     color: var(--banner-button-text) !important;
     padding: 0.4em 1.0em;
-    border-radius: 20px;
+    border-radius: 12px;
     text-decoration: none !important;
     font-weight: bold;
     white-space: nowrap;
