@@ -551,3 +551,10 @@ sub {
     margin-bottom: 0.4em;
     display: inline-block;
 }
+
+/* ============================================================
+   TEMPORARY UI OVERRIDE: Remove table row lines
+   ============================================================ */
+.token-specs td {
+    border-bottom: none !important;
+}
