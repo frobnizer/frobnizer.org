@@ -587,7 +587,7 @@ sub {
     transition: opacity 0.2s ease;
     display: inline-flex;
     position: relative;
-    top: 2.5px;
+    top: 2px;
     opacity: 0.8; 
 }
 
