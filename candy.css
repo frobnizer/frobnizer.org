@@ -536,7 +536,7 @@ sub {
     transition: opacity 0.2s ease;
     display: inline-flex;
     position: relative;
-    top: 1.6725px; 
+    top: 2px; 
 }
 
 .info-icon-header:hover {
