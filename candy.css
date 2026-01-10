@@ -373,16 +373,17 @@ a:active {
 /* project resources grid */
 .project-resources {
     display: grid;
-    /* Use 1fr instead of auto to force columns to fill the card width */
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, auto);
     row-gap: 1em;
-    column-gap: 1.5em;
+    column-gap: 1em;
+    /* This spreads columns to the edges to keep the card wide */
+    justify-content: space-between; 
     width: 100%;
     box-sizing: border-box;
 }
 
 .project-resources a {
-    padding: 0em 0.8em;
+    padding: 0.5em 0; /* Vertical padding only, let the grid handle horizontal */
     display: block;
     text-align: left;
     white-space: nowrap;
@@ -391,24 +392,16 @@ a:active {
 /* Landscape Phones & Small Tablets */
 @media (min-width: 480px) and (max-width: 767px) {
     .project-resources {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, auto);
     }
 }
 
 /* Desktop/iPad columns */
 @media (min-width: 768px) {
     .project-resources {
-        /* This ensures it matches the width of your Analytics card */
-        grid-template-columns: repeat(5, 1fr);
-        column-gap: 2em;
-    }
-}
-
-/* project resources desktop/iPad columns */
-@media (min-width: 768px) {
-    .project-resources {
-        grid-template-columns: repeat(5, 1fr);
-        column-gap: 3em; /* Restored larger gap for big screens */
+        grid-template-columns: repeat(5, auto);
+        /* 5 columns need some breathing room but not enough to overflow */
+        column-gap: 2em; 
     }
 }
 
