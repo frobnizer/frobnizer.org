@@ -356,7 +356,7 @@ a:active {
     border-bottom: none; 
 }
 
-/* Analytics Tabular Numbers Refinement */
+/* tabular numbers */
 .token-specs td:last-child {
     text-align: right;
     font-variant-numeric: tabular-nums;
@@ -431,7 +431,6 @@ a:active {
     opacity: 0.7; 
 }
 
-/* Tablet / Desktop / iPhone Landscape */
 @media (min-width: 480px) {
     .project-resources {
         grid-template-columns: repeat(4, auto);
@@ -559,7 +558,6 @@ footer {
     font-size: 0.95rem;
     text-align: center;
     color: var(--footer-text-color);
-    border-top: 1.25px solid var(--footer-border-color);
     width: 100%;
     box-sizing: border-box;
 }
@@ -601,7 +599,7 @@ sub {
     display: inline-block;
 }
 
-/* Definitions Page Styles */
+/* definitions */
 .definition-item { 
     margin-bottom: 2.2em; 
 }
@@ -642,7 +640,7 @@ sub {
     margin-bottom: 3em;
 }
 
-/* Label Dimming */
+/* table label dimming */
 .token-specs td:first-child {
     opacity: 0.9;
     font-weight: 300;
