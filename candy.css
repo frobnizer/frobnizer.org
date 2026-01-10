@@ -393,6 +393,13 @@ a:active {
     text-align: left;
     white-space: nowrap;
     text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.project-resources a:hover {
+    transform: translateX(4px);
+    opacity: 0.8;
+    color: var(--primary-accent-val);
 }
 
 /* Tablet / Desktop / iPhone Landscape */
