@@ -385,6 +385,12 @@ a:active {
         column-rule: 1px solid rgba(0, 0, 0, 0.08);
     }
 
+    @media (prefers-color-scheme: dark) {
+        .token-specs table tbody {
+            column-rule: 1px solid rgba(255, 255, 255, 0.09);
+        }
+    }
+
     .token-specs table tr {
         display: inline-table;
         width: 100%;
