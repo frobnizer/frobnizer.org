@@ -398,8 +398,8 @@ a:active {
 
 .project-resources a:hover {
     transform: translateX(4px);
-    opacity: 0.8;
-    color: var(--primary-accent-val);
+    color: var(--link-color-val); 
+    opacity: 0.7; 
 }
 
 /* Tablet / Desktop / iPhone Landscape */
