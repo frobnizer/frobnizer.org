@@ -233,6 +233,7 @@ h2 {
     margin-top: 0.5em;
     margin-bottom: 0.4em;
     padding: 0 0 0.15em 0;
+    letter-spacing: -0.03em;
     border-bottom: 1.5px solid var(--h2-border-color);
     display: inline-block;
 }
