@@ -55,97 +55,97 @@
 
                 <div class="definition-item">
                     <span class="metric-name">Trade Price</span>
-                    <span class="definition-text">The market price as determined by the latest executed trade.</span>
+                    <span class="definition-text">Market price as determined by the latest executed trade.</span>
                     <span class="meta-line"><strong>Utility:</strong> Provides real-time entry/exit valuation.</span>
                 </div>
 
                 <div class="definition-item">
                     <span class="metric-name">Floor Value</span>
-                    <span class="definition-text">The intrinsic value of each token if the liquidity pool were distributed across the entire supply.</span>
+                    <span class="definition-text">Intrinsic value of each token if the liquidity pool were distributed across the entire supply.</span>
                     <span class="meta-line"><strong>Formula:</strong> Burned Liquidity ÷ Public Float</span>
                     <span class="meta-line"><strong>Utility:</strong> Establishes the fundamental price floor.</span>
                 </div>
 
                 <div class="definition-item">
                     <span class="metric-name">Daily Volume</span>
-                    <span class="definition-text">The total value of buys and sells in a trailing 24-hour window.</span>
+                    <span class="definition-text">Total value of buys and sells in a trailing 24-hour window.</span>
                     <span class="meta-line"><strong>Utility:</strong> Measures market liquidity and interest levels.</span>
                 </div>
 
                 <div class="definition-item">
                     <span class="metric-name">Market Cap</span>
-                    <span class="definition-text">The total market value of FBZR based on the latest trade.</span>
+                    <span class="definition-text">Total market value of FBZR based on the latest trade.</span>
                     <span class="meta-line"><strong>Formula:</strong> Trade Price × Public Float</span>
                     <span class="meta-line"><strong>Utility:</strong> Measures the aggregate market valuation of the project.</span>
                 </div>
 
                 <div class="definition-item">
                     <span class="metric-name">Community Equity</span>
-                    <span class="definition-text">The current market value of all tokens held outside the liquidity pool.</span>
+                    <span class="definition-text">Total market value of FBZR held outside the liquidity pool.</span>
                     <span class="meta-line"><strong>Formula:</strong> Trade Price × Currently Held</span>
                     <span class="meta-line"><strong>Utility:</strong> Indicates the total circulating value subject to market price action.</span>
                 </div>
 
                 <div class="definition-item">
                     <span class="metric-name">Burned Liquidity</span>
-                    <span class="definition-text">The total value of the FBZR and WETH assets paired in the liquidity pool.</span>
+                    <span class="definition-text">Combined value of the FBZR and WETH assets paired in the liquidity pool.</span>
                     <span class="meta-line"><strong>Utility:</strong> Confirms the size and permanence of the trading environment.</span>
                 </div>
 
                 <div class="definition-item">
                     <span class="metric-name">Liquidity Coverage</span>
-                    <span class="definition-text">The value of the liquidity pool relative to the community equity.</span>
+                    <span class="definition-text">Value of the liquidity pool relative to the community equity.</span>
                     <span class="meta-line"><strong>Formula:</strong> Burned Liquidity ÷ Community Equity</span>
                     <span class="meta-line"><strong>Utility:</strong> Measures the pool's ability to absorb community sell pressure.</span>
                 </div>
 
                 <div class="definition-item">
                     <span class="metric-name">Backing Ratio</span>
-                    <span class="definition-text">The percentage of the trade price that is fundamentally supported by the floor value.</span>
+                    <span class="definition-text">Percentage of the trade price that is fundamentally supported by the floor value.</span>
                     <span class="meta-line"><strong>Formula:</strong> (Floor Value ÷ Trade Price) × 100</span>
                     <span class="meta-line"><strong>Utility:</strong> Indicates price stability and over-extension relative to the floor.</span>
                 </div>
 
                 <div class="definition-item">
                     <span class="metric-name">Rolling Performance</span>
-                    <span class="definition-text">The percentage price change in a trailing 24-hour window.</span>
+                    <span class="definition-text">Percentage price change in a trailing 24-hour window.</span>
                     <span class="meta-line"><strong>Utility:</strong> Tracks short-term momentum.</span>
                 </div>
 
                 <div class="definition-item">
                     <span class="metric-name">Transactions</span>
-                    <span class="definition-text">The total number of buys and sells in a trailing 24-hour window.</span>
+                    <span class="definition-text">Number of buys and sells in a trailing 24-hour window.</span>
                     <span class="meta-line"><strong>Utility:</strong> Reflects network engagement and frequency of activity.</span>
                 </div>
                 
                 <div class="definition-item">
                     <span class="metric-name">Public Float</span>
-                    <span class="definition-text">The total supply of tokens that are either in the liquidity pool or held by the community.</span>
+                    <span class="definition-text">Total supply of FBZR in the liquidity pool and held by the community.</span>
                     <span class="meta-line"><strong>Utility:</strong> Defines the maximum supply potentially available for trading.</span>
                 </div>
 
                 <div class="definition-item">
                     <span class="metric-name">Currently Held</span>
-                    <span class="definition-text">The number of tokens in circulation that are not in the liquidity pool.</span>
+                    <span class="definition-text">Amount of FBZR in circulation that is not in the liquidity pool.</span>
                     <span class="meta-line"><strong>Formula:</strong> Public Float - Pooled Frobnizer</span>
                     <span class="meta-line"><strong>Utility:</strong> Quantifies the portion of tokens retained by the community.</span>
                 </div>
 
                 <div class="definition-item">
                     <span class="metric-name">Pooled Frobnizer</span>
-                    <span class="definition-text">The amount of FBZR currently locked in the liquidity pool.</span>
-                    <span class="meta-line"><strong>Utility:</strong> Monitors token scarcity within the automated market maker (AMM).</span>
+                    <span class="definition-text">Amount of FBZR currently locked in the liquidity pool.</span>
+                    <span class="meta-line"><strong>Utility:</strong> Monitors token scarcity within the automated market maker.</span>
                 </div>
 
                 <div class="definition-item">
                     <span class="metric-name">Pooled Ethereum</span>
-                    <span class="definition-text">The amount of WETH paired with FBZR in the liquidity pool.</span>
+                    <span class="definition-text">Amount of WETH paired with FBZR in the liquidity pool.</span>
                     <span class="meta-line"><strong>Utility:</strong> Measures the available buy-side liquidity.</span>
                 </div>
 
                 <div class="definition-item">
                     <span class="metric-name">Base Asset Growth</span>
-                    <span class="definition-text">The percentage increase of WETH in the liquidity pool since deployment.</span>
+                    <span class="definition-text">Percentage increase of WETH in the liquidity pool since deployment.</span>
                     <span class="meta-line"><strong>Formula:</strong> (Current WETH - Initial WETH) ÷ Initial WETH × 100</span>
                     <span class="meta-line"><strong>Utility:</strong> Tracks the long-term growth of the project’s base reserves.</span>
                 </div>
