@@ -632,3 +632,15 @@ sub {
     margin-top: 1.5em;
     margin-bottom: 3em;
 }
+
+/* Label Dimming */
+.token-specs td:first-child {
+    opacity: 0.65;
+    font-weight: 500;
+    color: inherit;
+}
+
+.token-specs td:last-child {
+    opacity: 1;
+    font-weight: 600;
+}
