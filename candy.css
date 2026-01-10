@@ -580,8 +580,8 @@ sub {
 }
 
 .info-icon-header {
-    width: 22px;
-    height: 22px;
+    width: 23px;
+    height: 23px;
     color: var(--link-color-val);
     cursor: pointer;
     transition: opacity 0.2s ease;
