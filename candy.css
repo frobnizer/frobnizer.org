@@ -296,9 +296,9 @@ a:active {
     padding: 1.5em;
     margin-top: 0.75em;
     margin-bottom: 0.75em;
-    border: 1px solid rgba(0, 0, 0, 0.09);
+    border: 1px solid rgba(0, 0, 0, 0.04);
     background-clip: padding-box;
-    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.09);
     transition: box-shadow 0.3s ease-in-out;
     width: 100%;
     box-sizing: border-box;
