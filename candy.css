@@ -104,7 +104,7 @@ h1, h2, .metric-name {
 
 /* top banner */
 .top-banner {
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     padding: 0.75em 0.75em 0.75em 1.25em; 
@@ -650,4 +650,29 @@ sub {
 .token-specs td:last-child {
     opacity: 1;
     font-weight: 500;
+}
+
+/* custom selection */
+::selection {
+    background-color: rgba(0, 82, 255, 0.15);
+    color: var(--primary-accent-val);
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--body-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: #d1d1d1;
+    border-radius: 10px;
+    border: 2px solid var(--body-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-thumb {
+        background: #333;
+    }
 }
