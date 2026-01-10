@@ -233,7 +233,7 @@ h2 {
     margin-top: 0.5em;
     margin-bottom: 0.4em;
     padding-bottom: 0.25em;
-    border-bottom: 2px solid var(--h2-border-color);
+    border-bottom: 1.5px solid var(--h2-border-color);
     display: inline-block;
 }
 
