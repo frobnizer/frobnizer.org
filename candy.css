@@ -386,10 +386,10 @@ a:active {
     white-space: nowrap;
 }
 
-/* project resources four column */
+/* project resources desktop/iPad columns */
 @media (min-width: 768px) {
     .project-resources {
-        grid-template-columns: repeat(4, auto);
+        grid-template-columns: repeat(5, auto);
     }
 }
 
