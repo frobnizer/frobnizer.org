@@ -358,6 +358,9 @@ a:active {
     text-align: right;
     font-variant-numeric: tabular-nums;
     letter-spacing: 0.01em;
+    min-width: 120px;
+    font-feature-settings: "tnum";
+    white-space: nowrap;
 }
 
 /* token specifications link hover behavior */
