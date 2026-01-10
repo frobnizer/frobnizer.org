@@ -11,11 +11,13 @@
         }
 
         .metric-name {
-            display: block;
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: var(--body-text);
-            margin-bottom: 0.2em;
+            font-size: 1.25rem; 
+            font-weight: 600;
+            color: var(--h2-color);
+            display: inline-block;
+            border-bottom: 1.5px solid var(--h2-border-color);
+            margin-bottom: 0.4em;
+            padding-bottom: 0.15em;
         }
 
         .definition-text {
@@ -33,7 +35,14 @@
         }
 
         .meta-line strong {
-            opacity: 0.7;
+            font-weight: bold;
+            color: var(--text-muted-light-val);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .meta-line strong {
+                color: var(--text-muted-dark-val);
+            }
         }
 
         .back-nav-container {
