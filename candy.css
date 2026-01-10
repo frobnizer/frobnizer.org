@@ -111,7 +111,7 @@ body {
     margin: 20px auto;
     width: calc(100% - 40px);
     
-    border-radius: 8px;
+    border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     box-sizing: border-box;
     transition: box-shadow 0.3s ease-in-out;
@@ -138,7 +138,7 @@ body {
     background-color: var(--banner-button-bg);
     color: var(--banner-button-text) !important;
     padding: 0.4em 1.0em;
-    border-radius: 5px;
+    border-radius: 16px;
     text-decoration: none !important;
     font-weight: bold;
     white-space: nowrap;
@@ -267,7 +267,7 @@ a:active {
     background-color: var(--button-bg-color-val);
     color: var(--button-text-color-val) !important;
     padding: 0.8em 1.5em;
-    border-radius: 6px;
+    border-radius: 16px;
     text-decoration: none !important;
     font-weight: bold;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
