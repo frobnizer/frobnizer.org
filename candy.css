@@ -118,7 +118,7 @@ h1, h2, .metric-name {
     border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     box-sizing: border-box;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 .top-banner:hover {
@@ -275,7 +275,7 @@ a:active {
     text-decoration: none !important;
     font-weight: bold;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     margin-top: 1em;
     margin-bottom: 1em;
 }
@@ -297,22 +297,16 @@ a:active {
     margin-top: 0.75em;
     margin-bottom: 0.75em;
     box-shadow: 0 7px 22px rgba(0, 0, 0, 0.09);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    background-clip: padding-box;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: box-shadow 0.3s ease-in-out;
     width: 100%;
     box-sizing: border-box;
 }
-
 .card:hover {
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
-    transform: translateY(-4px);
 }
-
 @media (prefers-color-scheme: dark) {
     .card {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-        border: 1px solid rgba(255, 255, 255, 0.1);
     }
     .card:hover {
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
