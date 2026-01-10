@@ -310,8 +310,8 @@ a:active {
 
 @media (prefers-color-scheme: dark) {
     .card {
-        background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%), var(--card-bg-dark-val);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: linear-gradient(180deg, rgba(255,255,255,0.015) 0%, rgba(255,255,255,0) 100%), var(--card-bg-dark-val);
+        border: 1px solid rgba(255, 255, 255, 0.05);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     }
     .card:hover {
