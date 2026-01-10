@@ -373,10 +373,14 @@ a:active {
 /* project resources grid */
 .project-resources {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    /* Changed from 'auto' to '1fr' to allow columns to share space equally */
+    grid-template-columns: repeat(2, 1fr); 
     row-gap: 1em;
-    column-gap: 4.5em;
+    column-gap: 1.5em; /* Reduced base gap for mobile */
     justify-content: center;
+    width: 100%;
+    max-width: 1000px; /* Adjust based on your card's width */
+    margin: 0 auto;
 }
 
 .project-resources a {
@@ -384,12 +388,23 @@ a:active {
     display: block;
     text-align: left;
     white-space: nowrap;
+    font-size: 0.9em; /* Slightly smaller text helps fit 5 columns better */
+}
+
+/* project resources landscape phones & small tablets */
+@media (min-width: 480px) and (max-width: 767px) {
+    .project-resources {
+        /* Drop to 3 or 4 columns on landscape phones to prevent overlap */
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2em;
+    }
 }
 
 /* project resources desktop/iPad columns */
 @media (min-width: 768px) {
     .project-resources {
-        grid-template-columns: repeat(5, auto);
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 3em; /* Restored larger gap for big screens */
     }
 }
 
