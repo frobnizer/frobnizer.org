@@ -292,13 +292,13 @@ a:active {
     padding: 1.5em;
     margin-top: 0.75em;
     margin-bottom: 0.75em;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
     transition: box-shadow 0.3s ease-in-out;
     width: 100%;
     box-sizing: border-box;
 }
 .card:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
 }
 @media (prefers-color-scheme: dark) {
     .card {
