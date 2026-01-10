@@ -359,7 +359,7 @@ a:active {
         display: block;
         column-count: 2;
         column-gap: 4.5em;
-        column-rule: 1.5px solid var(--footer-border-color);
+        column-rule: 1.25px solid var(--footer-border-color);
     }
 
     .token-specs table tr {
@@ -523,7 +523,7 @@ footer {
     font-size: 0.95rem;
     text-align: center;
     color: var(--footer-text-color);
-    border-top: 1.5px solid var(--footer-border-color);
+    border-top: 1.25px solid var(--footer-border-color);
     width: 100%;
     box-sizing: border-box;
 }
