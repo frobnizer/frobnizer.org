@@ -589,7 +589,7 @@ sub {
     position: relative;
     vertical-align: middle; 
     position: relative;
-    transform: translateY(-1px);
+    transform: translateY(-3px);
     opacity: 0.8; 
 }
 
