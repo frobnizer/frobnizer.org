@@ -635,12 +635,12 @@ sub {
 
 /* Label Dimming */
 .token-specs td:first-child {
-    opacity: 0.65;
+    opacity: 0.8;
     font-weight: 500;
     color: inherit;
 }
 
 .token-specs td:last-child {
     opacity: 1;
-    font-weight: 600;
+    font-weight: 500;
 }
