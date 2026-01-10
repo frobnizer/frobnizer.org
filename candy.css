@@ -373,14 +373,12 @@ a:active {
 /* project resources grid */
 .project-resources {
     display: grid;
-    /* Changed from 'auto' to '1fr' to allow columns to share space equally */
-    grid-template-columns: repeat(2, 1fr); 
+    /* Use 1fr instead of auto to force columns to fill the card width */
+    grid-template-columns: repeat(2, 1fr);
     row-gap: 1em;
-    column-gap: 1.5em; /* Reduced base gap for mobile */
-    justify-content: center;
+    column-gap: 1.5em;
     width: 100%;
-    max-width: 1000px; /* Adjust based on your card's width */
-    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .project-resources a {
@@ -388,14 +386,20 @@ a:active {
     display: block;
     text-align: left;
     white-space: nowrap;
-    font-size: 0.9em; /* Slightly smaller text helps fit 5 columns better */
 }
 
-/* project resources landscape phones & small tablets */
+/* Landscape Phones & Small Tablets */
 @media (min-width: 480px) and (max-width: 767px) {
     .project-resources {
-        /* Drop to 3 or 4 columns on landscape phones to prevent overlap */
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop/iPad columns */
+@media (min-width: 768px) {
+    .project-resources {
+        /* This ensures it matches the width of your Analytics card */
+        grid-template-columns: repeat(5, 1fr);
         column-gap: 2em;
     }
 }
