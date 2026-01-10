@@ -373,35 +373,40 @@ a:active {
 /* project resources grid */
 .project-resources {
     display: grid;
-    grid-template-columns: repeat(2, auto);
-    row-gap: 1em;
-    column-gap: 1em;
-    /* This spreads columns to the edges to keep the card wide */
-    justify-content: space-between; 
+    grid-template-columns: repeat(2, 1fr); /* 1fr ensures even distribution */
+    /* Spacing between columns; match the 'gutter' of your analytics table */
+    column-gap: 2em; 
     width: 100%;
+    /* This removes the extra 'grid gap' so we can use padding instead */
+    row-gap: 0; 
     box-sizing: border-box;
+    /* Match the padding of your analytics card edges */
+    padding: 10px 20px; 
 }
 
 .project-resources a {
-    padding: 0.5em 0; /* Vertical padding only, let the grid handle horizontal */
+    /* This creates the 'line spacing' to match the analytics table rows */
+    padding: 12px 0.8em; 
     display: block;
     text-align: left;
     white-space: nowrap;
+    /* Ensure the font size matches the table labels */
+    font-size: 0.95em; 
+    /* Optional: adds a subtle divider like the analytics table */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
 }
 
 /* Landscape Phones & Small Tablets */
 @media (min-width: 480px) and (max-width: 767px) {
     .project-resources {
-        grid-template-columns: repeat(3, auto);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 /* Desktop/iPad columns */
 @media (min-width: 768px) {
     .project-resources {
-        grid-template-columns: repeat(5, auto);
-        /* 5 columns need some breathing room but not enough to overflow */
-        column-gap: 2em; 
+        grid-template-columns: repeat(5, 1fr);
     }
 }
 
