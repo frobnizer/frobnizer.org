@@ -353,6 +353,16 @@ a:active {
     text-align: right;
 }
 
+/* token specifications link hover behavior */
+.token-specs a {
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.token-specs a:hover {
+    opacity: 0.7;
+}
+
 /* two-column layout for desktop and iPad */
 @media (min-width: 768px) {
     .token-specs table tbody {
@@ -387,9 +397,8 @@ a:active {
     padding: 18px 36px; 
 }
 
-/* Global data link behavior */
-.project-resources a, 
-.token-specs a {
+/* Specific Resource Link Behavior */
+.project-resources a {
     padding: 13.5px 0; 
     display: inline-block;
     text-align: left;
@@ -398,8 +407,7 @@ a:active {
     transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
 }
 
-.project-resources a:hover, 
-.token-specs a:hover {
+.project-resources a:hover {
     transform: translateY(-3px);
     color: var(--link-color-val); 
     opacity: 0.7; 
