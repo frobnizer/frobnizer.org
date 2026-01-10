@@ -373,33 +373,33 @@ a:active {
 /* project resources grid */
 .project-resources {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 1fr ensures even distribution */
-    /* Spacing between columns; match the 'gutter' of your analytics table */
-    column-gap: 2em; 
-    width: 100%;
-    /* This removes the extra 'grid gap' so we can use padding instead */
+    /* Use 1fr to ensure columns take up equal space and hit the right edge */
+    grid-template-columns: repeat(2, 1fr);
     row-gap: 0; 
+    column-gap: 1.5em;
+    width: 100%;
     box-sizing: border-box;
-    /* Match the padding of your analytics card edges */
-    padding: 10px 20px; 
+    /* Adjusted padding: 20px on top/bottom, 25px on sides to match table edges */
+    padding: 20px 25px; 
 }
 
 .project-resources a {
-    /* This creates the 'line spacing' to match the analytics table rows */
-    padding: 12px 0.8em; 
+    /* Vertical padding controls the 'line height' to match table rows */
+    padding: 10px 0; 
     display: block;
     text-align: left;
     white-space: nowrap;
-    /* Ensure the font size matches the table labels */
-    font-size: 0.95em; 
-    /* Optional: adds a subtle divider like the analytics table */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+    text-decoration: none;
+    /* Ensure no borders or lines appear */
+    border: none; 
 }
 
-/* Landscape Phones & Small Tablets */
+/* Landscape Phones (e.g., iPhone) */
 @media (min-width: 480px) and (max-width: 767px) {
     .project-resources {
-        grid-template-columns: repeat(3, 1fr);
+        /* Set to 4 columns as requested for narrower landscape screens */
+        grid-template-columns: repeat(4, 1fr);
+        padding: 20px 25px;
     }
 }
 
@@ -407,6 +407,8 @@ a:active {
 @media (min-width: 768px) {
     .project-resources {
         grid-template-columns: repeat(5, 1fr);
+        /* Matches the horizontal breathing room of the Analytics table */
+        padding: 20px 30px; 
     }
 }
 
