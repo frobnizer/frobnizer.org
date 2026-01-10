@@ -341,7 +341,7 @@ a:active {
     text-align: left;
     vertical-align: top;
     white-space: nowrap;
-    border-bottom: 1px solid var(--table-border-color); 
+    border-bottom: none; 
 }
 
 .token-specs td:last-child {
@@ -382,7 +382,7 @@ a:active {
 }
 
 .project-resources a {
-    padding: 13px 0; 
+    padding: 13.5px 0; 
     display: block;
     text-align: left;
     white-space: nowrap;
@@ -550,11 +550,4 @@ sub {
 .analytics-header-container h2 {
     margin-bottom: 0.4em;
     display: inline-block;
-}
-
-/* ============================================================
-   TEMPORARY UI OVERRIDE: Remove table row lines
-   ============================================================ */
-.token-specs td {
-    border-bottom: none !important;
 }
