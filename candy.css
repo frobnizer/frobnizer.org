@@ -679,3 +679,21 @@ sub {
         background: #333;
     }
 }
+
+/* Specific fix for mobile portrait tables */
+@media (max-width: 480px) {
+    .token-specs table {
+        table-layout: fixed;
+    }
+
+    .token-specs td {
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .token-specs td:last-child {
+        min-width: 0;
+        text-align: right;
+    }
+}
