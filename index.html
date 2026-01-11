@@ -117,6 +117,7 @@
                     <tr><td>Liquidity Coverage:</td><td id="tableLiquidityMultiplier">Loading...</td></tr>
                     <tr><td>Backing Ratio:</td><td id="tableBackingValue">Loading...</td></tr>
                     <tr><td>Rolling Performance:</td><td id="tablePriceChangeValue">Loading...</td></tr>
+                    <tr><td>Market Sentiment:</td><td id="tableSentimentValue">Loading...</td></tr>
                     <tr><td>Turnover:</td><td id="tableTurnoverValue">Loading...</td></tr>
                     <tr><td>Transactions:</td><td id="tableBuySellRatio">Loading...</td></tr>
                     <tr><td>Public Float:</td><td id="tablePublicFloat">Loading...</td></tr>
@@ -126,7 +127,6 @@
                     <tr><td>Base Asset Growth:</td><td id="tableEthGrowth">Loading...</td></tr>
                     <tr><td>Holder Count:</td><td id="tableHolderCount">Loading...</td></tr>
                     <tr><td>Deployment Age:</td><td id="tablePoolAge">Loading...</td></tr>
-                    <tr><td>Market Sentiment</td><td id="tableSentimentValue">Loading</td></tr>        
                 </table>
             </div>
         </div>
@@ -346,17 +346,13 @@ async function updateBannerPrice() {
                 if (parseFloat(backingRatio) > 35) score++;
 
                 if (score >= 3) {
-                    tableSentimentValue.innerText = "STRONGLY BULLISH";
-                    tableSentimentValue.style.color = "#00ff00";
+                    tableSentimentValue.innerText = "Very Bullish";
                 } else if (score >= 1) {
-                    tableSentimentValue.innerText = "BULLISH";
-                    tableSentimentValue.style.color = "#adff2f";
+                    tableSentimentValue.innerText = "Bullish";
                 } else if (score === 0) {
-                    tableSentimentValue.innerText = "CONSOLIDATING";
-                    tableSentimentValue.style.color = "#ffcc00";
+                    tableSentimentValue.innerText = "Consolidating";
                 } else {
-                    tableSentimentValue.innerText = "CAUTIOUS";
-                    tableSentimentValue.style.color = "#ff4444";
+                    tableSentimentValue.innerText = "Cautious";
                 }
             }
 
