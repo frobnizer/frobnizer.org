@@ -331,9 +331,14 @@ async function updateBannerPrice() {
             }).format(volumeUSD);
 
             if (tableTurnoverValue) {
-                const turnover = (volumeUSD / marketCap) * 100;
-                tableTurnoverValue.innerText = turnover.toFixed(2) + "%";
-            }
+                 const turnover = (volumeUSD / marketCap) * 100;
+                 const formattedTurnover = new Intl.NumberFormat('en-US', {
+                 minimumFractionDigits: 2,
+                 maximumFractionDigits: 2
+                                      }).format(turnover);
+    
+                 tableTurnoverValue.innerText = formattedTurnover + "%";
+}
 
             if (tableSentimentValue) {
                 let score = 0;
