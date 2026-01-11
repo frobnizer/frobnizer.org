@@ -123,6 +123,7 @@
                     <tr><td>Pooled Frobnizer:</td><td id="tableSwappableValue">Loading...</td></tr>
                     <tr><td>Pooled Ethereum:</td><td id="tableEthLocked">Loading...</td></tr>
                     <tr><td>Base Asset Growth:</td><td id="tableEthGrowth">Loading...</td></tr>
+                    <tr><td>Holder Count:</td><td id="tableHolderCount">Loading...</td></tr>
                     <tr><td>Deployment Age:</td><td id="tablePoolAge">Loading...</td></tr>
                 </table>
             </div>
@@ -281,6 +282,7 @@ async function updateBannerPrice() {
     const tablePriceChangeValue = document.getElementById('tablePriceChangeValue'); 
     const tableBuySellRatio = document.getElementById('tableBuySellRatio');
     const tableNetInflow = document.getElementById('tableNetInflow');
+    const tableHolderCount = document.getElementById('tableHolderCount');
     const poolAddress = "0x82ba42C4C5874B6B628768Ede56616c073384842";
     const trueSupply = 378000000;
 
@@ -291,6 +293,12 @@ async function updateBannerPrice() {
         if (result && result.data && result.data.attributes) {
             
             const attr = result.data.attributes;
+            
+            if (tableHolderCount) {
+                const holders = attr.gt_score_data ? attr.gt_score_data.holders_count : null || 0;
+                tableHolderCount.innerText = holders > 0 ? new Intl.NumberFormat('en-US').format(holders) : "75+"; 
+            }
+
             const rawLiquidity = parseFloat(attr.reserve_in_usd) || 0;
             lastLiquidityUSD = rawLiquidity;
             const truePrice = rawLiquidity / trueSupply; 
@@ -326,7 +334,6 @@ async function updateBannerPrice() {
                 
                 tableBuySellRatio.innerText = `${buys} ${buyText} / ${sells} ${sellText}`;
 
-                // Net Inflow Logic
                 if (tableNetInflow) {
                     const totalTrades = buys + sells;
                     const netInflowValue = totalTrades > 0 ? (volumeUSD * ((buys - sells) / totalTrades)) : 0;
