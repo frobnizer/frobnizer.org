@@ -680,20 +680,20 @@ sub {
     }
 }
 
-/* Specific fix for mobile portrait tables */
-@media (max-width: 480px) {
+@media (max-width: 767px) {
     .token-specs table {
         table-layout: fixed;
+        width: 100%;
     }
 
-    .token-specs td {
-        white-space: normal;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
+    .token-specs td:first-child {
+        width: 45%;
+        white-space: nowrap;
     }
 
     .token-specs td:last-child {
-        min-width: 0;
+        width: 55%; 
         text-align: right;
+        min-width: 0;
     }
 }
