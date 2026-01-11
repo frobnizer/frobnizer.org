@@ -588,9 +588,9 @@ sub {
     display: inline-flex;
     position: relative;
     vertical-align: middle; 
-    transform: translateY(-7px);
+    transform: translateY(-8px);
     opacity: 0.8; 
-    margin-left: -6px;
+    margin-left: -4px;
 }
 
 .info-icon-header:hover {
