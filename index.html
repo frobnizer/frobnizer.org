@@ -301,7 +301,7 @@ async function updateBannerPrice() {
         if (tableHolderCount) {
             
             const holders = attr.gt_score_data ? attr.gt_score_data.holders_count : 0;
-                  tableHolderCount.innerText = holders > 65 ? new Intl.NumberFormat('en-US').format(holders) : "65 Addresses"; 
+                  tableHolderCount.innerText = holders > 50 ? new Intl.NumberFormat('en-US').format(holders) : "60 Addresses"; 
 }
 
             const rawLiquidity = parseFloat(attr.reserve_in_usd) || 0;
