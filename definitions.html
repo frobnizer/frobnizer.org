@@ -51,9 +51,16 @@
 
                 <div class="definition-item">
                     <span class="metric-name">Daily Volume</span>
-                    <span class="definition-text">Total value of buys and sells in a trailing 24-hour window.</span>
+                    <span class="definition-text">Total value of all buy orders and all sell orders in a trailing 24-hour window.</span>
                     <span class="meta-line"><strong>Utility:</strong> Measures market liquidity and interest levels.</span>
                 </div>
+                
+                <div class="definition-item">
+                    <span class="metric-name">Net Inflow</span>
+                    <span class="definition-text">Total value of all buy orders minus all sell orders.</span>
+                    <span class="meta-line"><strong>Formula:</strong> ((Buys - Sells) / Transactions) x Daily Volume</span>
+                    <span class="meta-line"><strong>Utility:</strong> Confirms whether the project is absorbing new capital or experiencing a net drain of liquidity.</span>
+                </div> 
 
                 <div class="definition-item">
                     <span class="metric-name">Market Cap</span>
@@ -88,16 +95,35 @@
                     <span class="meta-line"><strong>Formula:</strong> (Floor Value ÷ Trade Price) × 100</span>
                     <span class="meta-line"><strong>Utility:</strong> Indicates price stability and over-extension relative to the floor.</span>
                 </div>
+                
+                <div class="definition-item">
+                    <span class="metric-name">Holder Count</span>
+                    <span class="definition-text">Total number of unique addresses holding a balance of FBZR.</span>
+                    <span class="meta-line"><strong>Utility:</strong> Primary metric for indicating the project's ability to attract and retain a diverse base of investors over time.</span>
+                </div> 
+                
+                <div class="definition-item">
+                    <span class="metric-name">Market Sentiment</span>
+                    <span class="definition-text">Rating that aggregates price momentum, trading volume, and community growth to categorize the current emotional state of the market.</span>
+                    <span class="meta-line"><strong>Utility:</strong> Helps distinguish between caution, healthy consolidation, and aggressive growth phases.</span>
+                </div>  
 
                 <div class="definition-item">
                     <span class="metric-name">Rolling Performance</span>
                     <span class="definition-text">Percentage price change in a trailing 24-hour window.</span>
                     <span class="meta-line"><strong>Utility:</strong> Tracks short-term momentum.</span>
                 </div>
+                
+                <div class="definition-item">
+                    <span class="metric-name">Turnover</span>
+                    <span class="definition-text">Measures the rate at which the FBZR supply circulates relative to the total market value in a trailing 24-hour window.</span>
+                    <span class="meta-line"><strong>Formula:</strong> (Daily Volume ÷ Market Cap) x 100</span>
+                    <span class="meta-line"><strong>Utility:</strong> Helps distinguish between stagnant periods, healthy activity, and phases of high speculative demand.</span>
+                </div>  
 
                 <div class="definition-item">
                     <span class="metric-name">Transactions</span>
-                    <span class="definition-text">Number of buys and sells in a trailing 24-hour window.</span>
+                    <span class="definition-text">Total number of all buy orders and all sell orders in a trailing 24-hour window.</span>
                     <span class="meta-line"><strong>Utility:</strong> Reflects network engagement and frequency of activity.</span>
                 </div>
                 
