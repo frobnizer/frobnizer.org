@@ -590,7 +590,7 @@ sub {
     vertical-align: middle; 
     transform: translateY(-7px);
     opacity: 0.8; 
-    margin-left: 2px;
+    margin-left: -1px;
 }
 
 .info-icon-header:hover {
