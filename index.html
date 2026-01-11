@@ -117,6 +117,7 @@
                     <tr><td>Liquidity Coverage:</td><td id="tableLiquidityMultiplier">Loading...</td></tr>
                     <tr><td>Backing Ratio:</td><td id="tableBackingValue">Loading...</td></tr>
                     <tr><td>Rolling Performance:</td><td id="tablePriceChangeValue">Loading...</td></tr>
+                    <tr><td>Turnover:</td><td id="tableTurnoverValue">Loading...</td></tr>
                     <tr><td>Transactions:</td><td id="tableBuySellRatio">Loading...</td></tr>
                     <tr><td>Public Float:</td><td id="tablePublicFloat">Loading...</td></tr>
                     <tr><td>Currently Held:</td><td id="tableCommunityHoldings">Loading...</td></tr>
@@ -125,6 +126,7 @@
                     <tr><td>Base Asset Growth:</td><td id="tableEthGrowth">Loading...</td></tr>
                     <tr><td>Holder Count:</td><td id="tableHolderCount">Loading...</td></tr>
                     <tr><td>Deployment Age:</td><td id="tablePoolAge">Loading...</td></tr>
+                    <tr><td>Market Sentiment</td><td id="tableSentimentValue">Loading</td></tr>        
                 </table>
             </div>
         </div>
@@ -283,6 +285,8 @@ async function updateBannerPrice() {
     const tableBuySellRatio = document.getElementById('tableBuySellRatio');
     const tableNetInflow = document.getElementById('tableNetInflow');
     const tableHolderCount = document.getElementById('tableHolderCount');
+    const tableSentimentValue = document.getElementById('tableSentimentValue'); // New target
+    const tableTurnoverValue = document.getElementById('tableTurnoverValue'); // New target
     const poolAddress = "0x82ba42C4C5874B6B628768Ede56616c073384842";
     const trueSupply = 378000000;
 
@@ -325,6 +329,36 @@ async function updateBannerPrice() {
             const formattedVolumeUSD = new Intl.NumberFormat('en-US', {
                 style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 
             }).format(volumeUSD);
+
+            if (tableTurnoverValue) {
+                const turnover = (volumeUSD / marketCap) * 100;
+                tableTurnoverValue.innerText = turnover.toFixed(2) + "%";
+            }
+
+            if (tableSentimentValue) {
+                let score = 0;
+                const h1Change = parseFloat(attr.price_change_percentage.h1) || 0;
+                const holders = attr.gt_score_data ? attr.gt_score_data.holders_count : 0;
+                
+                if (h1Change > 0) score++;
+                if (volumeUSD > (marketCap * 0.15)) score++;
+                if (holders >= 75) score++;
+                if (parseFloat(backingRatio) > 35) score++;
+
+                if (score >= 3) {
+                    tableSentimentValue.innerText = "STRONGLY BULLISH";
+                    tableSentimentValue.style.color = "#00ff00";
+                } else if (score >= 1) {
+                    tableSentimentValue.innerText = "BULLISH";
+                    tableSentimentValue.style.color = "#adff2f";
+                } else if (score === 0) {
+                    tableSentimentValue.innerText = "CONSOLIDATING";
+                    tableSentimentValue.style.color = "#ffcc00";
+                } else {
+                    tableSentimentValue.innerText = "CAUTIOUS";
+                    tableSentimentValue.style.color = "#ff4444";
+                }
+            }
 
             if (tableBuySellRatio && attr.transactions && attr.transactions.h24) {
                 const buys = attr.transactions.h24.buys || 0;
