@@ -383,17 +383,17 @@ async function updateBannerPrice() {
                 }
             }
 
-                if (tablePriceChangeValue && attr.price_change_percentage && attr.price_change_percentage.h24) {
-                   const change = parseFloat(attr.price_change_percentage.h24);
-                   const prefix = change > 0 ? "+" : "";
-    
-                   const formattedChange = new Intl.NumberFormat('en-US', {
-                         minimumFractionDigits: 2,
-                         maximumFractionDigits: 2
-                   }).format(Math.abs(change));
-    
-                   tablePriceChangeValue.innerText = prefix + formattedChange + "%";
-}
+            if (tablePriceChangeValue && attr.price_change_percentage && attr.price_change_percentage.h24) {
+                const change = parseFloat(attr.price_change_percentage.h24);
+
+                const formattedChange = new Intl.NumberFormat('en-US', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                    signDisplay: 'always'
+                }).format(change);
+
+                tablePriceChangeValue.innerText = formattedChange + "%";
+            }
 
 
             if (bannerText) bannerText.innerHTML = `Current Market Price: ${formattedTradePrice}`;
