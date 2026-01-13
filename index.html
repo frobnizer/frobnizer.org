@@ -435,6 +435,7 @@ async function updateOnChainBalance() {
     const wethAddress = "0x4200000000000000000000000000000000000006";
 
     const minABI = ["function balanceOf(address owner) view returns (uint256)"];
+
     const poolABI = [
         "function feeGrowthGlobal0X128() view returns (uint256)",
         "function feeGrowthGlobal1X128() view returns (uint256)",
@@ -443,6 +444,7 @@ async function updateOnChainBalance() {
 
     try {
         const provider = new ethers.providers.JsonRpcProvider(ALCHEMY_URL);
+
         const poolContract = new ethers.Contract(poolAddress, poolABI, provider);
         const [fg0, fg1, currentLiquidity] = await Promise.all([
             poolContract.feeGrowthGlobal0X128(),
@@ -457,8 +459,10 @@ async function updateOnChainBalance() {
         const wethFees = parseFloat(ethers.utils.formatUnits(wethFeesRaw, 18));
         const fbzrFees = parseFloat(ethers.utils.formatUnits(fbzrFeesRaw, 18));
 
-        if (tableBurnedRevenue && typeof lastTradePrice !== 'undefined' && typeof ethPrice !== 'undefined') {
-            const totalBurnedUSD = (wethFees * ethPrice) + (fbzrFees * lastTradePrice);
+        const currentEthPrice = (typeof ethPrice !== 'undefined') ? ethPrice : 2600; 
+
+        if (tableBurnedRevenue && typeof lastTradePrice !== 'undefined') {
+            const totalBurnedUSD = (wethFees * currentEthPrice) + (fbzrFees * lastTradePrice);
             tableBurnedRevenue.innerText = new Intl.NumberFormat('en-US', {
                 style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2
             }).format(totalBurnedUSD);
