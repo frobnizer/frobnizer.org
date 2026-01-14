@@ -113,16 +113,16 @@
                     <tr><td>Daily Volume:</td><td id="tableVolumeUSD">Loading...</td></tr>
                     <tr><td>Net Inflow:</td><td id="tableNetInflow">Loading...</td></tr>
                     <tr><td>Market Cap:</td><td id="tableMarketCapValue">Loading...</td></tr>
-                    <tr><td>Fully Diluted Valuation:</td><td id="tableFDVValue">Loading...</td></tr>
+                    <tr><td>Fully Diluted:</td><td id="tableFDVValue">Loading...</td></tr>
                     <tr><td>Community Equity:</td><td id="tableCommunityEquity">Loading...</td></tr>
                     <tr><td>Burned Liquidity:</td><td id="tableLiquidityValue">Loading...</td></tr>
                     <tr><td>Liquidity Coverage:</td><td id="tableLiquidityMultiplier">Loading...</td></tr>
                     <tr><td>Backing Ratio:</td><td id="tableBackingValue">Loading...</td></tr>
-                    <tr><td>Holder Count:</td><td id="tableHolderCount">Loading...</td></tr>
                     <tr><td>Market Sentiment:</td><td id="tableSentimentValue">Loading...</td></tr>
                     <tr><td>Rolling Performance:</td><td id="tablePriceChangeValue">Loading...</td></tr>
                     <tr><td>Turnover:</td><td id="tableTurnoverValue">Loading...</td></tr>
                     <tr><td>Transactions:</td><td id="tableBuySellRatio">Loading...</td></tr>
+                    <tr><td>Holder Count:</td><td id="tableHolderCount">Loading...</td></tr>
                     <tr><td>Public Float:</td><td id="tablePublicFloat">Loading...</td></tr>
                     <tr><td>Currently Held:</td><td id="tableCommunityHoldings">Loading...</td></tr>
                     <tr><td>Pooled Frobnizer:</td><td id="tableSwappableValue">Loading...</td></tr>
@@ -305,7 +305,7 @@ async function updateBannerPrice() {
         if (tableHolderCount) {
             
             const holders = attr.gt_score_data ? attr.gt_score_data.holders_count : 0;
-                  tableHolderCount.innerText = holders > 50 ? new Intl.NumberFormat('en-US').format(holders) : "60 Addresses"; 
+                  tableHolderCount.innerText = holders > 58 ? new Intl.NumberFormat('en-US').format(holders) : "58 Addresses"; 
 }
 
             const rawLiquidity = parseFloat(attr.reserve_in_usd) || 0;
