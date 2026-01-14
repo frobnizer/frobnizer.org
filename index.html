@@ -113,7 +113,7 @@
                     <tr><td>Daily Volume:</td><td id="tableVolumeUSD">Loading...</td></tr>
                     <tr><td>Net Inflow:</td><td id="tableNetInflow">Loading...</td></tr>
                     <tr><td>Market Cap:</td><td id="tableMarketCapValue">Loading...</td></tr>
-                    <tr><td>Fully Diluted Valuation:</td><td id="tableMarketCapValue">Loading...</td></tr>
+                    <tr><td>Fully Diluted Valuation:</td><td id="tableFDVValue">Loading...</td></tr>
                     <tr><td>Community Equity:</td><td id="tableCommunityEquity">Loading...</td></tr>
                     <tr><td>Burned Liquidity:</td><td id="tableLiquidityValue">Loading...</td></tr>
                     <tr><td>Liquidity Coverage:</td><td id="tableLiquidityMultiplier">Loading...</td></tr>
@@ -279,10 +279,11 @@ async function updateBannerPrice() {
     const bannerText = document.getElementById('bannerMessageText');
     const tablePriceValue = document.getElementById('tablePriceValue');
     const tableFloorValue = document.getElementById('tableFloorValue');
-    const tableATHValue = document.getElementById('tableATHValue'); // New target for ATH
+    const tableATHValue = document.getElementById('tableATHValue'); 
     const tableBackingValue = document.getElementById('tableBackingValue');
     const tableLiquidityValue = document.getElementById('tableLiquidityValue');
     const tableMarketCapValue = document.getElementById('tableMarketCapValue');
+    const tableFDVValue = document.getElementById('tableFDVValue');
     const tableVolumeUSD = document.getElementById('tableVolumeUSD');
     const tablePriceChangeValue = document.getElementById('tablePriceChangeValue'); 
     const tableBuySellRatio = document.getElementById('tableBuySellRatio');
@@ -410,6 +411,7 @@ async function updateBannerPrice() {
             if (tableBackingValue) tableBackingValue.innerText = backingRatio + "%";
             if (tableLiquidityValue) tableLiquidityValue.innerText = formattedLiquidity;
             if (tableMarketCapValue) tableMarketCapValue.innerText = formattedMarketCap;
+            if (tableFDVValue) tableFDVValue.innerText = formattedMarketCap;
             if (tableVolumeUSD) tableVolumeUSD.innerText = formattedVolumeUSD;
 
             updatePoolAge();
