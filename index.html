@@ -109,6 +109,7 @@
             <table>
                     <tr><td>Trade Price:</td><td id="tablePriceValue">Loading...</td></tr>
                     <tr><td>Floor Value:</td><td id="tableFloorValue">Loading...</td></tr>
+                    <tr><td>All-Time High:</td><td id="tableATHValue">Loading...</td></tr>
                     <tr><td>Daily Volume:</td><td id="tableVolumeUSD">Loading...</td></tr>
                     <tr><td>Net Inflow:</td><td id="tableNetInflow">Loading...</td></tr>
                     <tr><td>Market Cap:</td><td id="tableMarketCapValue">Loading...</td></tr>
@@ -277,6 +278,7 @@ async function updateBannerPrice() {
     const bannerText = document.getElementById('bannerMessageText');
     const tablePriceValue = document.getElementById('tablePriceValue');
     const tableFloorValue = document.getElementById('tableFloorValue');
+    const tableATHValue = document.getElementById('tableATHValue'); // New target for ATH
     const tableBackingValue = document.getElementById('tableBackingValue');
     const tableLiquidityValue = document.getElementById('tableLiquidityValue');
     const tableMarketCapValue = document.getElementById('tableMarketCapValue');
@@ -285,8 +287,8 @@ async function updateBannerPrice() {
     const tableBuySellRatio = document.getElementById('tableBuySellRatio');
     const tableNetInflow = document.getElementById('tableNetInflow');
     const tableHolderCount = document.getElementById('tableHolderCount');
-    const tableSentimentValue = document.getElementById('tableSentimentValue'); // New target
-    const tableTurnoverValue = document.getElementById('tableTurnoverValue'); // New target
+    const tableSentimentValue = document.getElementById('tableSentimentValue'); 
+    const tableTurnoverValue = document.getElementById('tableTurnoverValue'); 
     const poolAddress = "0x82ba42C4C5874B6B628768Ede56616c073384842";
     const trueSupply = 378000000;
 
@@ -313,6 +315,11 @@ async function updateBannerPrice() {
 
             const formattedFloorValue = formatWithSubscript(truePrice);
             const formattedTradePrice = formatWithSubscript(tokenPrice);
+
+            if (tableATHValue) {
+                const athPrice = 0.000071732;
+                tableATHValue.innerHTML = formatWithSubscript(athPrice);
+            }
 
             const formattedLiquidity = new Intl.NumberFormat('en-US', {
                 style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 
